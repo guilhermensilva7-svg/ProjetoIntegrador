@@ -3,6 +3,13 @@ header{
     text-align: center;
     margin: 10px;
 }
+:root {
+    --roxo: #5b2d8e;
+    --roxo-claro: #7c4ab8;
+    --lilas: #9b6dcc;
+    --branco: #ffffff;
+    --escuro: #1a1a2e;
+}
 header a{
   text-decoration: none;
   padding: 10px;
@@ -37,7 +44,6 @@ body{
     font-weight: 100;
 }
 .catalogo{
-    text-align: center;
     margin: auto;
 }
 .catalogo-titulo {
@@ -55,24 +61,23 @@ body{
     .catalogo-faixa {
       display: flex;
       gap: 16px;
+      text-align: center;
       
       padding-bottom: 8px;
       scrollbar-width: none;
     }
  
-    .catalogo-faixa::-webkit-scrollbar {
-     display: none; 
-        }
+    
          .card {
       min-width: 230px;
       flex-shrink: 0;           
       scroll-snap-align: start;
       border-radius: 10px;
-      overflow: hidden;
+      overflow:visible;
       background: var(--branco);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.375);
       cursor: pointer;
-      transition: transform 4s, box-shadow 0.2s;
+      transition: transform 1s, box-shadow 0.2s;
     }
  
     .card:hover {
@@ -82,7 +87,7 @@ body{
  
     .card img { width: 100%; height: 140px; object-fit: cover; display: block; }
  
-    .card p { padding: 10px 12px; font-size: 14px; font-weight: 700; color: var(--escuro); }
+    .card p { padding: 10px 12px; font-size: 14px; font-weight: 700; color: var(--lilas); }
  
     .divisor { border: none; border-top: 2px solid #ddd; margin: 10px 40px; }
  
