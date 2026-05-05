@@ -1,11 +1,18 @@
 header{
     background-color: #f7f4fc;
     text-align: center;
+    margin: 10px;
+}
+header a{
+  text-decoration: none;
+  padding: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 1000;
+  text-transform:uppercase ;
+  letter-spacing: 1px;
 }
 header img{
     width: 200px;
-    padding: 1px;
-    margin: 1px;
 
 }
 body{
@@ -24,7 +31,7 @@ body{
     font-style: italic;
     font-size: 16px;
     line-height: 1.7;
-    opacity: 0.92;
+    opacity: 1;
 }
 .citacao p{
     font-weight: 100;
@@ -91,22 +98,22 @@ body{
     }
  
     .grid-3 {
-         display: grid;
-          grid-template-columns: repeat(3, 1fr);
-           gap: 24px; 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px; 
     }
     .grid-2 {
-         display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-           gap: 24px; align-items: start; 
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px; align-items: start; 
     }
  
     .bloco-img img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        border-radius: 8px;
-        display: block; 
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block; 
     }
  
     .bloco-texto {
@@ -127,9 +134,6 @@ body{
       padding: 40px;
     }
  
-    .secao-exportacao .secao-titulo { color: var(--branco); }
-    .secao-exportacao .bloco-texto { color: #ccc; }
- 
     .secao-exportacao .bloco-texto mark {
       background: rgba(181, 140, 230, 0.908);
       color: var(--branco);
@@ -141,20 +145,40 @@ body{
       padding: 36px 60px;
     }
  
-    .footer-inner { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; align-items: center; }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
  
-    footer img { max-width: 220px; display: block; }
+    footer img {
+       max-width: 220px;
+      display: block;
+    }
  
-    .footer-slogan { font-style: italic; font-size: 15px; opacity: 0.88; text-align: center; line-height: 1.6; }
+    .footer-slogan {
+      font-style: italic;
+      font-size: 15px;
+      opacity: 1;
+      text-align: center;
+      line-height: 1.6;
+    }
  
-    .footer-map { display: flex; justify-content: center; }
-    .footer-map iframe { border-radius: 8px; border: none; }
+    .footer-map {
+      display: flex;
+      justify-content: center;
+    }
+    .footer-map iframe {
+      border-radius: 8px;
+      border: none;
+    }
  
     .footer-bottom {
       text-align: center;
       margin-top: 24px;
       font-size: 13px;
-      opacity: 0.65;
+      opacity: 1;
       border-top: 1px solid rgba(255,255,255,0.2);
       padding-top: 16px;
     }
