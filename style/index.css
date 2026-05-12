@@ -1,8 +1,18 @@
 header{
-    background-color: #f7f4fc;
-    text-align: center;
-    margin: 10px;
-    margin-bottom: 30px;
+  background-color: #f7f4fc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 28px;
+  height: 64px;
+  margin-bottom: 30px;
+}
+body{
+  width: 100%;
+  justify-items: center;
+  margin: auto;
 }
 :root {
   *{
@@ -27,6 +37,7 @@ header a{
   font-size: small;
   border-left: solid var(--lilas) 4px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.375);
+  
 }
 header img{
     width: 200px;
@@ -58,6 +69,8 @@ body{
 }
 .citacao p{
     font-weight: 100;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
 }
 .catalogo{
     margin: auto;
@@ -165,6 +178,8 @@ body{
         font-size: 15px;
         line-height: 1.75;
         color: black; 
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 400;
     }
  
     .bloco-texto mark {
@@ -211,6 +226,22 @@ body{
       opacity: 1;
       text-align: center;
       line-height: 1.6;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      
+    }
+    .links a{
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      text-decoration: none;
+      background-color: #c38cff;
+      border-radius: 10px;
+      margin: 10px;
+      border-left: #e9d5ff solid 3px;
+      padding: 5px;
+    }
+    .links{
+      margin: 30px;
     }
  
     .footer-map {
@@ -230,6 +261,8 @@ body{
       opacity: 1;
       border-top: 1px solid rgba(255,255,255,0.2);
       padding-top: 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
     }
  
     @media (max-width: 768px) {
