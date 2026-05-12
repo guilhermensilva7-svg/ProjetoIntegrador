@@ -2,8 +2,12 @@ header{
     background-color: #f7f4fc;
     text-align: center;
     margin: 10px;
+    margin-bottom: 30px;
 }
 :root {
+  *{
+  
+  }
     --roxo: #5b2d8e;
     --roxo-claro: #7c4ab8;
     --lilas: #9b6dcc;
@@ -13,10 +17,16 @@ header{
 header a{
   text-decoration: none;
   padding: 10px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: 1000;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
   text-transform:uppercase ;
   letter-spacing: 1px;
+  background-color: #7c4ab8;
+  border-radius: 7px;
+  color:#ffffff;
+  font-size: small;
+  border-left: solid var(--lilas) 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.375);
 }
 header img{
     width: 200px;
@@ -31,7 +41,7 @@ body{
     padding: 0;
 }
 .citacao{
-    background-color: #5b2d8e;
+    background-color: #a564ef;
     color: white;
     padding: 30px 70px;
     text-align: center;
@@ -39,6 +49,12 @@ body{
     font-size: 16px;
     line-height: 1.7;
     opacity: 1;
+    margin: 10px;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.375);
+    cursor: default;
+    
+    
 }
 .citacao p{
     font-weight: 100;
@@ -56,13 +72,18 @@ body{
       border-left: 4px solid var(--roxo-claro);
       padding-left: 12px;
       text-align: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      border-radius: 10px;
+      background-color:  #efefef;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.375);
     }
  
     .catalogo-faixa {
       display: flex;
       gap: 16px;
       text-align: center;
-      
+      justify-content: center;
       padding-bottom: 8px;
       scrollbar-width: none;
     }
@@ -85,13 +106,29 @@ body{
       box-shadow: 0 8px 24px rgba(90, 45, 142, 0.696);
     }
  
-    .card img { width: 100%; height: 140px; object-fit: cover; display: block; }
+    .card img { 
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block; 
+    }
  
-    .card p { padding: 10px 12px; font-size: 14px; font-weight: 700; color: var(--lilas); }
+    .card p { 
+      padding: 10px 12px;
+      font-size: 14px; 
+      font-weight: 700; 
+      color: var(--lilas); 
+    }
  
-    .divisor { border: none; border-top: 2px solid #ddd; margin: 10px 40px; }
+    .divisor { 
+      border: none; 
+      border-top: 2px solid #ddd; 
+      margin: 10px 40px; 
+    }
  
-    .secao { padding: 40px; }
+    .secao { 
+      padding: 40px; 
+    }
  
     .secao-titulo {
       font-size: 26px;
@@ -100,6 +137,8 @@ body{
       margin-bottom: 28px;
       text-align: center;
       line-height: 1.3;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
     }
  
     .grid-3 {
@@ -119,6 +158,7 @@ body{
       object-fit: cover;
       border-radius: 8px;
       display: block; 
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.375);
     }
  
     .bloco-texto {
@@ -135,13 +175,16 @@ body{
  
     .secao-exportacao {
       background: var(--escuro);
-      color: var(--branco);
+      color: var(--lilas);
       padding: 40px;
     }
  
     .secao-exportacao .bloco-texto mark {
       background: rgba(181, 140, 230, 0.908);
       color: var(--branco);
+    }
+    .secao-exportacao .bloco-texto{
+      color:#7c4ab8 ;
     }
  
     footer {
@@ -177,6 +220,7 @@ body{
     .footer-map iframe {
       border-radius: 8px;
       border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.375);
     }
  
     .footer-bottom {
