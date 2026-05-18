@@ -24,6 +24,13 @@ header{
   margin-bottom: 30px;
   
 }
+.logo{
+    width: 165px;
+    position: absolute;
+    top: 8px;
+    left: 60px;
+     
+}
 header a{
   text-decoration: none;
   padding: 10px;
@@ -35,8 +42,6 @@ header a{
   border-radius: 7px;
   color:#ffffff;
   font-size: small;
-  border-left: solid var(--lilas) 4px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.375);
   
 }
 header img{
