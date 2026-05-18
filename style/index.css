@@ -294,3 +294,16 @@ body{
       .secao, .catalogo { padding: 28px 20px; }
     }
     
+        .main{
+        columns: 3;
+    }
+     .secao-exportacao2 {
+      background-color: #a787c5;
+      color: var(--branco);
+      padding: 40px;
+    }
+    .teste {
+      background-color: #5b2d8e;
+      color: var(--branco);
+      padding: 36px 60px;
+    }
