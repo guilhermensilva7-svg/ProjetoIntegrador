@@ -112,7 +112,10 @@ body{
       font-family: 'Syne', sans-serif;
       font-weight: 800;
       border-radius: 5px;
-      background-color:  #efefef;
+      background-color:  #f7f4fc;
+      max-width: 30px;
+      display: flex;
+      
       
     }
  
