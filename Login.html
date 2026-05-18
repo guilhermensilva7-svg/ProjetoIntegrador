@@ -1,50 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-     <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
+    <title>Login - NC</title>
+    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
+
+    <style>
+        /* aqui é o básico pra página não ficar zoada */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5; /* aquele cinza clarinho de site chique */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* faz ocupar a tela toda pra centralizar */
+        }
+
+        /* essa caixa segura tudo no meio e um embaixo do outro */
+        .main-container {
+            display: flex;
+            flex-direction: column; /* pra o rodapé não fugir pro lado kkk */
+            align-items: center;    
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        /* a vaca roxa que tava gigante */
+        .banner-img {
+            width: 180px;
+            height: auto; /* pro bicho não ficar achatado */
+            margin-bottom: 10px;
+        }
+
+        /* o titulo roxão em destaque */
+        .title {
+            color: #7235ab;
+            font-family: Impact, sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* o quadrado branco do login */
+        .registration-form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* aquela sombrinha pra dar profundidade */
+            width: 100%; 
+            box-sizing: border-box; /* pro preenchimento não quebrar o tamanho da caixa */
+        }
+
+        /* separa cada campo pra não ficar tudo colado */
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        /* o nomezinho em cima do campo */
+        .input-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        /* o lugar onde o cara digita */
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        /* quando o cara clica no campo ele fica roxinho */
+        .input-group input:focus {
+            border-color: #7235ab;
+        }
+
+        /* o botãozão de criar conta */
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: #7235ab;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        /* efeito pro botão escurecer quando passa o mouse */
+        .btn-submit:hover {
+            background-color: #552682;
+        }
+
+        /* o rodapé que tava teimando em ficar do lado */
+        .main-footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+            width: 100%;
+        }
+
+        .footer-links {
+            margin-top: 5px;
+        }
+
+        /* os links do rodapé bonitinhos */
+        .footer-links a {
+            color: #7235ab;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <header>
-    <div align="center">
-        
-     <img src="Imagens/Banner para loja online site super seguro mercado shops médio (1000 x 200 px) (1000 x 150 px).png" width="100%" height="100%" >
-     <h1 style="color: rgb(114, 53, 171);" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">CADASTRE-SE</h1>
+
+    <div class="main-container">
+        <header>
+            <img src="Imagens/logo_boi-removebg-preview.png" alt="Logotipo NC" class="banner-img">
+            <h1 class="title">Cadastre-se</h1>
+        </header>
+
+        <form method="post" action="#" class="registration-form">
+            <div class="input-group">
+                <label>NOME DE USUÁRIO</label>
+                <input type="text" name="usuario" placeholder="Ex: joaosilva" required>
+            </div>
+            <div class="input-group">
+                <label>E-MAIL</label>
+                <input type="email" name="email" placeholder="exemplo@email.com" required>
+            </div>
+            <div class="input-group">
+                <label>CPF</label>
+                <input type="text" name="cpf" placeholder="000.000.000-00" required>
+            </div>
+            <div class="input-group">
+                <label>SENHA</label>
+                <input type="password" name="senha" placeholder="Mínimo 6 caracteres" required>
+            </div>
+            <button type="submit" class="btn-submit">CRIAR MINHA CONTA</button>
+        </form>
+
+        <footer class="main-footer">
+            <p>&copy; 2026 NC - Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a> | 
+                <a href="#">Política de Privacidade</a>
+            </div>
+        </footer>
     </div>
-    <table>
-        <tr></tr>
-     
-     <div align="center">
-     <form method="post" action="#">
 
-        <label><b>NOME</b></label>
-        <input type="text" name="nome de usuário" placeholder="crie seu nome de usuário " required><br>
-        <button type="submit">Enviar nome</button>
-        <br>
-        <br>
-        <label><b>E-MAIL</b></label>
-        <input type="email" nme="email" placeholder="insira seu E-mail"/><br>
-        <button type="submit">Enviar E-mail</button>
-        <br>
-        <br>
-        <label><b>CPF</b></label>
-        <input type="text" name="CPF" placeholder="Insira seu cpf " required><br>
-        <button type="submit">Enviar CPF</button>
-        <br>
-        <br>
-        <label><b>SENHA</b></label>
-        <input type="password" name="senha" placeholder="crie sua senha"/><br>
-        <button type="submit">Enviar senha</button>
-
-     </form>
-
-
-    </div>
-   
-</table>
-     </header>  
-    
 </body>
 </html>
