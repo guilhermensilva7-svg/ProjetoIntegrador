@@ -5,9 +5,6 @@ header{
     margin-bottom: 30px;
 }
 :root {
-  *{
-  
-  }
     --roxo: #5b2d8e;
     --roxo-claro: #7c4ab8;
     --lilas: #9b6dcc;
@@ -41,7 +38,7 @@ body{
     padding: 0;
 }
 .citacao{
-    background-color: #a564ef;
+    background-color: var(--lilas);
     color: white;
     padding: 30px 70px;
     text-align: center;
@@ -55,11 +52,26 @@ body{
     cursor: default;
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
+    position: relative;
+    overflow: hidden;
     
-    
+}
+.citacao::before {
+  content: '';                
+  position: absolute;
+  top: -100px; right: 100px;  
+  width: 700px; height: 380px;
+  background: radial-gradient( 
+    circle, #7c4ab8 0%, transparent 70%
+  );
+  pointer-events: none; 
+  z-index: 0;
+  
 }
 .citacao p{
     font-weight: 100;
+    z-index: 1;
+    position: relative;
 }
 .catalogo{
     margin: auto;
