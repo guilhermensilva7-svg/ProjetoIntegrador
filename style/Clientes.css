@@ -96,11 +96,26 @@ header nav a:hover {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+.numero-item-destaque{
+    background-color: var(--branco);
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(90, 45, 142, 0.696);
+    width: 600px;
+}
 
 .numero-valor {
     display: block;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--roxo);
+    margin-bottom: 8px;
+}
+.numero-valor-destaque {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 1000;
     color: var(--roxo);
     margin-bottom: 8px;
 }
@@ -144,7 +159,18 @@ header nav a:hover {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     border-left: 4px solid var(--lilas);
+    transition: transform 0.2s;
+    cursor: default;
 }
+.card-feedback:hover {
+    background-color: var(--branco);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--lilas);
+    transform: translateY(2px);
+}
+
 
 .card-feedback.destaque {
     border-left-color: var(--roxo);
