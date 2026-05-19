@@ -65,11 +65,11 @@ header nav a:hover {
     background: var(--roxo);
     color: #eeedfe;
     text-align: center;
-    padding: 48px 80px;
+    padding: 48px 80px; /*espaço em cima e embaixo e espaço nas laterais.*/
     font-family: 'Syne', sans-serif;
     font-size: 20px;
-    font-weight: 700;
-    line-height: 1.7;
+    font-weight: 700;/*Define a espessura da fonte.*/
+    line-height: 1.7; /*Espaçamento entre linhas.*/
     letter-spacing: 0.3px;
     border-bottom: 4px solid var(--lilas);
 }
@@ -93,8 +93,8 @@ header nav a:hover {
 }
 
 .bloco {
-    background: var(--branco);
-    border-radius: 14px;
+    background: var(--branco); /* Codigo que que cria o fundo Branco*/
+    border-radius: 14px; /* Borda Arredondada*/
     padding: 32px 36px;
     box-shadow: 0 2px 14px rgba(91,45,142,0.08);
     font-size: 15px;
@@ -114,8 +114,8 @@ header nav a:hover {
     grid-template-columns: 1fr 280px;
     gap: 28px;
     align-items: center;
-    background: var(--branco);
-    border-radius: 14px;
+    background: var(--branco); /* Codigo que que cria o fundo Branco*/
+    border-radius: 14px; /* Borda Arredondada*/
     padding: 32px 36px;
     box-shadow: 0 2px 14px rgba(91,45,142,0.08);
 }
