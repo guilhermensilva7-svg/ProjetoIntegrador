@@ -243,7 +243,10 @@ footer img {
 
 .links { margin: 10px; }
 
-.footer-map { display: flex; justify-content: center; }
+.footer-map {
+    display: flex;
+    justify-content: center;
+}
 
 .footer-map iframe {
     border-radius: 8px;
