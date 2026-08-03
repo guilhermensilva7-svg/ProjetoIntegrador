@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo beforeunload</title>
+</head>
+<body>
+
+  <form id="meuFormulario">
+    <label>Nome:
+      <input type="text" name="nome">
+    </label>
+    <br><br>
+    <label>Mensagem:
+      <textarea name="mensagem"></textarea>
+    </label>
+    <br><br>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    let temAlteracaoNaoSalva = false;
+    const formulario = document.getElementById('meuFormulario');
+
+    // Sempre que o usuário digitar algo no formulário, marca como alterado
+    formulario.addEventListener('input', function () {
+      temAlteracaoNaoSalva = true;
+    });
+
+    // Quando o formulário é enviado, considera que foi "salvo"
+    formulario.addEventListener('submit', function (event) {
+      event.preventDefault(); // só pra não recarregar a página nesse exemplo
+      temAlteracaoNaoSalva = false;
+      alert('Formulário enviado! Agora pode fechar sem aviso.');
+    });
+
+    // Avisa o usuário se ele tentar sair com alterações não salvas
+    window.addEventListener('beforeunload', function (event) {
+      if (temAlteracaoNaoSalva) {
+        event.preventDefault();
+        event.returnValue = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
