@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastre-se - NutriCampo</title>
+  <title>Login - NutriCampo</title>
   <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style/Login.css">
+  <link rel="stylesheet" href="style/Login2.css">
 
   <!-- FRAMEWORK DE ANIMAÇÃO (AOS) -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -30,33 +30,22 @@
 
   <!-- CONTAINER PRINCIPAL DO FORMULÁRIO (Animação Zoom-In) -->
   <div class="main-container" data-aos="zoom-in" data-aos-duration="800">
-    <h1 class="title">Cadastre-se</h1>
+    <h1 class="title">Entrar</h1>
 
     <form method="post" action="#" class="registration-form">
-      <div class="input-group" data-aos="fade-up" data-aos-delay="100">
-        <label for="usuario">NOME DE USUÁRIO</label>
-        <input type="text" id="usuario" name="usuario" placeholder="Ex: Ricardo Rossi" required>
-      </div>
 
       <div class="input-group" data-aos="fade-up" data-aos-delay="200">
         <label for="email">E-MAIL</label>
         <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
       </div>
 
-      <div class="input-group" data-aos="fade-up" data-aos-delay="300">
-        <label for="cpf">CPF</label>
-        <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
-      </div>
 
       <div class="input-group" data-aos="fade-up" data-aos-delay="400">
         <label for="senha">SENHA</label>
         <input type="password" id="senha" name="senha" placeholder="Mínimo 6 caracteres" required>
       </div>
 
-      <button type="submit" class="btn-submit" data-aos="fade-up" data-aos-delay="500">Criar minha conta</button>
-      <p class="ou">ou</p>
-      <button type="button" onclick="window.location.href='Login2.html'" class="btn-submitou" data-aos="fade-up"
-        data-aos-delay="600">Já tenho conta</button>
+      <button type="submit" class="btn-submit" onclick="window.location.href='Index.html'" data-aos="fade-up" data-aos-delay="500">Logar</button>
     </form>
   </div>
 
