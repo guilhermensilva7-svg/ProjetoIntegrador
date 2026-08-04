@@ -1,24 +1,54 @@
+/* ===================================================
+   1. VARIÁVEIS GLORAIS E RESET
+   =================================================== */
+:root {
+    --roxo: #5b2d8e;
+    --roxo-claro: #7c4ab8;
+    --lilas: #9b6dcc;
+    --branco: #ffffff;
+    --escuro: #1a1a2e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: #f7f4fc;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* ===================================================
+   2. HEADER E NAVEGAÇÃO
+   =================================================== */
 header {
     background-color: var(--roxo);
     display: flex;
     align-items: center;
-    justify-content: end;
-    box-sizing: border-box;
+    justify-content: flex-end;
     width: 100%;
     padding: 0 28px;
     height: 64px;
     margin-bottom: 30px;
     position: relative;
 }
-.logo {
+
+header img.logo {
     width: 165px;
     position: absolute;
     top: 8px;
     left: 60px;
 }
-header nav { display: flex;
+
+header nav { 
+    display: flex;
     gap: 8px; 
 }
+
 header nav a {
     text-decoration: none;
     padding: 9px 14px;
@@ -32,36 +62,16 @@ header nav a {
     font-size: 12px;
     transition: background 0.2s, transform 0.15s;
 }
+
 header nav a:hover {
     background-color: var(--lilas);
     transform: translateY(-2px);
-    }
-body{
-  width: 100%;
-  justify-items: center;
-  margin: auto;
-}
-:root {
-    --roxo: #5b2d8e;
-    --roxo-claro: #7c4ab8;
-    --lilas: #9b6dcc;
-    --branco: #ffffff;
-    --escuro: #1a1a2e;
 }
 
-header img{
-    width: 200px;
-
-}
-body{
-    background-color: #f7f4fc;
-    text-align: center;
-}
-*{
-    margin: 0;
-    padding: 0;
-}
-.citacao{
+/* ===================================================
+   3. CITAÇÃO E TÍTULOS
+   =================================================== */
+.citacao {
     background-color: var(--lilas);
     color: white;
     padding: 22px 50px;
@@ -69,270 +79,305 @@ body{
     font-style: italic;
     font-size: 16px;
     line-height: 1.7;
-    opacity: 1;
-    margin: 10px;
+    margin: 40px auto;
+    max-width: 1100px;
     border-radius: 30px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.375);
     cursor: default;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
     position: relative;
     overflow: hidden;
-    margin: 40px;
-    
 }
+
 .citacao::before {
-  content: '';                
-  position: absolute;
-  top: -100px;
-  right: 100px;  
-  width: 700px;
-  height: 380px;
-  background: radial-gradient( 
-    circle, #7c4ab8 0%, transparent 70%
-  );
-  pointer-events: none; 
-  z-index: 0;
-  
+    content: '';                
+    position: absolute;
+    top: -100px;
+    right: 100px;  
+    width: 700px;
+    height: 380px;
+    background: radial-gradient(circle, #7c4ab8 0%, transparent 70%);
+    pointer-events: none; 
+    z-index: 0;
 }
-.citacao p{
-    font-weight: 100;
+
+.citacao p {
     z-index: 1;
     position: relative;
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
     color: #eeedfe;
 }
-.catalogo{
+
+/* TÍTULO DESTAQUES (Alinhado à esquerda com o carrossel) */
+.catalogo-titulo {
+    font-size: 25px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--roxo);
+    border-left: 6px solid var(--roxo-claro);
+    padding-left: 12px;
+    text-align: left;
+    font-family: 'Syne', sans-serif;
+    max-width: 1100px;
+    margin: 20px auto 10px auto;
+    display: block;
+}
+
+/* ===================================================
+   4. ESTILIZAÇÃO DO CARROSSEL
+   =================================================== */
+#carouselExampleDark {
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 20px; 
+    position: relative;
+}
+
+#carouselExampleDark .carousel-inner {
+    border-radius: 16px;
+    overflow: visible; 
+}
+
+/* Imagens Responsivas e Padronizadas */
+#carouselExampleDark .carousel-inner img {
+    width: 100% !important;
+    height: 400px !important;
+    object-fit: cover !important;
+    border-radius: 16px;
+    box-shadow: 0 12px 20px 10px rgba(91, 45, 142, 0.55); 
+}
+
+/* Setas de Navegação */
+#carouselExampleDark .carousel-control-prev {
+    left: 10px;
+    width: auto;
+}
+
+#carouselExampleDark .carousel-control-next {
+    right: 10px;
+    width: auto;
+}
+
+#carouselExampleDark .carousel-control-prev-icon,
+#carouselExampleDark .carousel-control-next-icon {
+    filter: invert(34%) sepia(58%) saturate(1250%) hue-rotate(235deg) brightness(90%) contrast(90%);
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/* Indicadores / Bolinhas */
+#carouselExampleDark .carousel-indicators {
+    bottom: -20px; 
+}
+
+#carouselExampleDark .carousel-indicators [data-bs-target] {
+    background-color: var(--roxo-claro);
+    opacity: 0.6;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 6px;
+    border: none;
+    transition: transform 0.2s, opacity 0.2s, background-color 0.2s;
+}
+
+#carouselExampleDark .carousel-indicators .active {
+    background-color: var(--roxo);
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+/* Legendas do Carrossel */
+#carouselExampleDark .carousel-caption {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    padding: 12px 20px;
+    bottom: 25px;
+    max-width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#carouselExampleDark .carousel-caption h5 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--roxo);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+/* ===================================================
+   5. SEÇÕES E CONTEÚDO (MAIN)
+   =================================================== */
+.divisor { 
+    border: none; 
+    border-top: 2px solid #ddd; 
+    margin: 20px auto;
+    max-width: 1100px;
+}
+
+.secao { 
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.secao-titulo {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--roxo);
+    margin-bottom: 28px;
+    text-align: center;
+    line-height: 1.3;
+    font-family: 'Syne', sans-serif;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px; 
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas: Texto esquerdo | Imagem centro | Texto direito */
+    gap: 24px; 
+    align-items: center; /* Alinha o texto perfeitamente no meio junto com a altura da imagem */
+    margin-bottom: 40px;
+}
+
+.bloco-img img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.375);
+}
+
+.bloco-texto {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1a1a2e; 
+    text-align: justify;
+}
+
+.bloco-texto mark {
+    background-color: var(--lilas);
+    color: var(--branco);
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* Seção de Exportação */
+.secao-exportacao {
+    background: var(--escuro);
+    color: var(--lilas);
+    padding: 40px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+}
+
+.secao-exportacao .secao-titulo {
+    color: var(--branco);
+}
+
+.secao-exportacao .bloco-texto {
+    color: #e2d5f3;
+}
+
+.secao-exportacao .bloco-texto mark {
+    background: rgba(181, 140, 230, 0.9);
+    color: var(--branco);
+}
+
+/* ===================================================
+   6. FOOTER
+   =================================================== */
+footer {
+    background: var(--roxo);
+    color: #eeedfe;
+    padding: 36px 60px;
     margin-top: 40px;
 }
-.catalogo-titulo {
-      font-size: 25px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--roxo);
-      margin: 16px;
-      border-left: 6px solid var(--roxo-claro);
-      padding-left: 12px;
-      text-align: center;
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      border-radius: 5px;
-      background-color:  #f7f4fc;
-      max-width: 30px;
-      display: flex;
-      
-      
-    }
- 
-    .catalogo-faixa {
-      display: flex;
-      gap: 16px;
-      text-align: center;
-      justify-content: center;
-      padding-bottom: 8px;
-      margin: 30px;
-      margin-bottom: 35px;
-      max-width: 1300px;
-    }
- 
-    
-      .card {
-      min-width: 230px;           
-      border-radius: 10px;
-      overflow:hidden;
-      background: var(--branco);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.375);
-      cursor: pointer;
-      transition: transform 1s, box-shadow 0.2s;
-    }
- 
-    .card:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 8px 24px rgba(90, 45, 142, 0.696);
-    }
- 
-    .card img { 
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      display: block; 
-    }
- 
-    .card p { 
-      padding: 10px 12px;
-      font-size: 14px; 
-      font-weight: 700; 
-      color: var(--lilas);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600; 
-    }
- 
-    .divisor { 
-      border: none; 
-      border-top: 2px solid #ddd; 
-      margin: 10px 40px; 
-    }
- 
-    .secao { 
-      padding: 40px;
 
-    }
- 
-    .secao-titulo {
-      font-size: 26px;
-      font-weight: 900;
-      color: var(--roxo);
-      margin-bottom: 28px;
-      text-align: center;
-      line-height: 1.3;
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-    }
- 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-      margin-bottom: 40px; 
-      
-    }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 24px; align-items: start;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-      margin-bottom: 40px;
-    }
- 
-    .bloco-img img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 8px;
-      display: block; 
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.375);
-    }
- 
-    .bloco-texto {
-        font-size: 15px;
-        line-height: 1.75;
-        color: black; 
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 400;
-    }
- 
-    .bloco-texto mark {
-      background-color: var(--lilas);
-      padding: 1px 3px;
-      border-radius: 3px;
-    }
- 
-    .secao-exportacao {
-      background: var(--escuro);
-      color: var(--lilas);
-      padding: 40px;
-    }
- 
-    .secao-exportacao .bloco-texto mark {
-      background: rgba(181, 140, 230, 0.908);
-      color: var(--branco);
-    }
-    .secao-exportacao .bloco-texto{
-      color:#7c4ab8 ;
-    }
- 
-    footer {
-      background: var(--roxo);
-      color: var(--branco);
-      padding: 36px 60px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-      color: #eeedfe;
-      align-items: center;
-    }
- 
-    .footer-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 32px;
-      align-items: center;
-    }
- 
-    footer img {
-       max-width: 500px;
-      display: block;
-      margin: auto;
-    }
- 
-    .footer-slogan {
-      font-style: italic;
-      font-size: 15px;
-      opacity: 1;
-      text-align: center;
-      line-height: 1.6;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-      
-      
-    }
-    .links a{
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-      text-decoration: none;
-      border-radius: 10px;
-      margin: 10px;
-      padding: 5px;
-      color: #eeedfe;
-    }
-    .links{
-      margin: 30px;
-    }
- 
-    .footer-map {
-      display: flex;
-      justify-content: center;
-    }
-    .footer-map iframe {
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer img {
+    max-width: 220px;
+    display: block;
+    margin: auto;
+}
+
+.footer-slogan {
+    font-style: italic;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.links a {
+    text-decoration: none;
+    border-radius: 10px;
+    color: #eeedfe;
+    transition: opacity 0.2s;
+}
+
+.links a:hover {
+    opacity: 0.8;
+}
+
+.footer-map iframe {
     border-radius: 8px;
-    border: none;
     box-shadow: 0 2px 10px rgba(0,0,0,0.375);
     width: 100%;
-    height: 200px;
-    }
- 
-    .footer-bottom {
-      text-align: center;
-      margin-top: 24px;
-      font-size: 13px;
-      opacity: 1;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding-top: 16px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-    }
- 
-    @media (max-width: 768px) {
-      .grid-3, .grid-2 { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr; text-align: center; }
-      .citacao { padding: 20px 24px; }
-      .secao, .catalogo { padding: 28px 20px; }
+    height: 180px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 16px;
+}
+
+/* ===================================================
+   7. RESPONSIVIDADE (MOBILE)
+   =================================================== */
+@media (max-width: 768px) {
+    .grid-3, .grid-2 { 
+        grid-template-columns: 1fr; 
     }
     
-        .main{
-        columns: 3;
+    .footer-inner { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
     }
-     .secao-exportacao2 {
-      background-color: #a787c5;
-      color: var(--branco);
-      padding: 40px;
+    
+    .citacao { 
+        padding: 20px 24px; 
+        margin: 20px;
     }
-    .teste {
-      background-color: #5b2d8e;
-      color: var(--branco);
-      padding: 36px 60px;
+    
+    #carouselExampleDark .carousel-inner img {
+        height: 250px !important; /* Ajusta carrossel para celulares */
     }
+
+    header img.logo {
+        width: 120px;
+        left: 20px;
+    }
+}

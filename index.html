@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriCampo - Início</title>
+  <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style/index.css">
+
+  <!-- FONTS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;700&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- BOOTSTRAP CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- BOOTSTRAP JS (Apenas o bundle é necessário) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
+
 <body>
- 
+
   <!-- HEADER -->
   <header>
     <nav>
@@ -17,114 +29,205 @@
       <a href="Sobre nós.html">Nós</a>
       <a href="Login.html">Login</a>
       <a href="Clientes.html">Clientes</a>
-      <img class="logo" src="Imagens/2.png">
+      <img class="logo" src="Imagens/2.png" alt="Logo NutriCampo">
     </nav>
   </header>
- 
+
   <!-- CITAÇÃO -->
   <div class="citacao">
-    <p>O mundo atual passa por uma profunda transformação impulsionada pela urgência climática e pela revolução tecnológica, realidades que dominam tanto o noticiário global quanto o dia a dia no campo. Na agropecuária, a produção tradicional cedeu espaço para um ecossistema de alta precisão, onde o uso de Inteligência Artificial, edição genética, bioinsumos, sensores vestíveis para o gado (IoT) e sistemas sustentáveis (como a Integração Lavoura-Pecuária-Floresta) trabalham juntos para garantir máxima produtividade, carne carbono neutro e rastreabilidade total via blockchain.</p>
+    <p>O mundo atual passa por uma profunda transformação impulsionada pela urgência climática e pela revolução
+      tecnológica, realidades que dominam tanto o noticiário global quanto o dia a dia no campo. Na agropecuária,
+      a produção tradicional cedeu espaço para um ecossistema de alta precisão, onde o uso de Inteligência
+      Artificial, edição genética, bioinsumos, sensores vestíveis para o gado (IoT) e sistemas sustentáveis (como
+      a Integração Lavoura-Pecuária-Floresta) trabalham juntos para garantir máxima produtividade, carne carbono
+      neutro e rastreabilidade total via blockchain.</p>
   </div>
-  <!-- CATÁLOGO HORIZONTAL -->
-  <section class="catalogo">
-    <h2 class="catalogo-titulo">Destaques</h2>
-    <div class="catalogo-faixa">
-      <div class="card">
-        <img src="Imagens/Sistema.jpg" alt="ILPF">
-        <p>Sistemas ILPF</p>
-      </div>
-      <div class="card">
-        <img src="Imagens/IoT.jpg" alt="IoT">
-        <p>IoT no Campo</p>
-      </div>
-      <div class="card">
-        <img src="Imagens/blockchain.jpg" alt="Blockchain">
-        <p>Blockchain e Rastreabilidade</p>
-      </div>
-      <div class="card">
-        <img src="Imagens/Fertilização In Vitro.jpg" alt="FIV">
-        <p>Fertilização In Vitro</p>
-      </div>
-      <div class="card">
-        <img src="Imagens/recordes históricos de preço.jpg" alt="Recordes">
-        <p>Recordes de Exportação</p>
-      </div>
-      <div class="card">
-        <img src="Imagens/exportações de carne bovina.jpg" alt="Exportações">
-        <p>Carne Premium Brasileira</p>
-      </div>
+
+  <!-- TÍTULO DESTAQUES (FORA DO CARROSSEL) -->
+  <h2 class="catalogo-titulo">Destaques</h2>
+
+  <!-- INICIO CARROSSEL -->
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+
+    <!-- INDICADORES (BOLINHAS) -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
     </div>
-  </section>
- 
+
+    <!-- CONTEÚDO DOS SLIDES -->
+    <div class="carousel-inner">
+
+      <!-- SLIDE 1 -->
+      <div class="carousel-item active" data-bs-interval="2500">
+        <img src="Imagens/Sistema.jpg" class="d-block" alt="ILPF">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Sistemas ILPF</h5>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="carousel-item" data-bs-interval="2500">
+        <img src="Imagens/IoT.jpg" class="d-block" alt="IoT">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>IoT no Campo</h5>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="carousel-item" data-bs-interval="2500">
+        <img src="Imagens/blockchain.jpg" class="d-block" alt="Blockchain">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Blockchain e Rastreabilidade</h5>
+        </div>
+      </div>
+
+      <!-- SLIDE 4 -->
+      <div class="carousel-item" data-bs-interval="2500">
+        <img src="Imagens/Fertilização In Vitro.jpg" class="d-block" alt="Fertilização In Vitro">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Fertilização In Vitro</h5>
+        </div>
+      </div>
+
+      <!-- SLIDE 5 -->
+      <div class="carousel-item" data-bs-interval="2500">
+        <img src="Imagens/recordes históricos de preço.jpg" class="d-block" alt="Recordes de Exportação">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Recordes de Exportação</h5>
+        </div>
+      </div>
+
+      <!-- SLIDE 6 -->
+      <div class="carousel-item" data-bs-interval="2500">
+        <img src="Imagens/exportações de carne bovina.jpg" class="d-block" alt="Carne Premium">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Carne Premium Brasileira</h5>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SETAS DE NAVEGAÇÃO -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
+
+  </div>
+  <!-- FIM CARROSEL -->
+
   <hr class="divisor">
- 
+
   <main>
- 
+
     <!-- SEÇÃO 1 -->
     <section class="secao">
       <h1 class="secao-titulo">Pecuária 4.0: Inovação e Sustentabilidade Redefinem o Futuro do Agro Brasileiro</h1>
       <div class="grid-3">
         <div>
           <div class="bloco-img"><img src="Imagens/Sistema.jpg" alt="ILPF"></div>
-          <p class="bloco-texto" style="margin-top:14px;">Sistemas ILPF (Integração Lavoura-Pecuária-Floresta) e Pecuária de Baixo Carbono: O sistema ILPF alterna ou combina a criação de gado com o cultivo de grãos e o plantio de árvores em uma mesma área. As árvores fornecem sombra e capturam gases de efeito estufa. O resultado é a <mark>produção da chamada "carne carbono neutro"</mark>, uma exigência crescente dos mercados internacionais.</p>
+          <p class="bloco-texto" style="margin-top:14px;">Sistemas ILPF (Integração Lavoura-Pecuária-Floresta)
+            e Pecuária de Baixo Carbono: O sistema ILPF alterna ou combina a criação de gado com o cultivo
+            de grãos e o plantio de árvores em uma mesma área. As árvores fornecem sombra e capturam gases
+            de efeito estufa. O resultado é a <mark>produção da chamada "carne carbono neutro"</mark>, uma
+            exigência crescente dos mercados internacionais.</p>
         </div>
         <div>
           <div class="bloco-img"><img src="Imagens/IoT.jpg" alt="IoT"></div>
-          <p class="bloco-texto" style="margin-top:14px;">A tecnologia vestível chegou ao pasto. Hoje, bovinos utilizam colares, brincos eletrônicos e sensores inteligentes <mark>conectados à Internet das Coisas (IoT).</mark> Esses dispositivos coletam dados 24h sobre saúde, movimentação e digestão de cada animal. Com IA, o produtor recebe alertas no celular para tratar doenças antes que se agravem.</p>
+          <p class="bloco-texto" style="margin-top:14px;">A tecnologia vestível chegou ao pasto. Hoje, bovinos
+            utilizam colares, brincos eletrônicos e sensores inteligentes <mark>conectados à Internet das
+              Coisas (IoT).</mark> Esses dispositivos coletam dados 24h sobre saúde, movimentação e
+            digestão de cada animal. Com IA, o produtor recebe alertas no celular para tratar doenças antes
+            que se agravem.</p>
         </div>
         <div>
           <div class="bloco-img"><img src="Imagens/blockchain.jpg" alt="Blockchain"></div>
-          <p class="bloco-texto" style="margin-top:14px;">Usando blockchain e monitoramento via satélite, é possível registrar todas as informações sobre a vida do animal, <mark>desde o seu nascimento até a chegada ao supermercado.</mark> Isso garante aos compradores que os produtos são livres de desmatamento e estão em conformidade com as leis ambientais e trabalhistas.</p>
+          <p class="bloco-texto" style="margin-top:14px;">Usando blockchain e monitoramento via satélite, é
+            possível registrar todas as informações sobre a vida do animal, <mark>desde o seu nascimento até
+              a chegada ao supermercado.</mark> Isso garante aos compradores que os produtos são livres de
+            desmatamento e estão em conformidade com as leis ambientais e trabalhistas.</p>
         </div>
       </div>
     </section>
- 
+
     <hr class="divisor">
- 
+
     <!-- SEÇÃO 2 -->
     <section class="secao">
       <h1 class="secao-titulo">Do Laboratório ao Pasto: O Salto Tecnológico da Nova Pecuária</h1>
       <div class="grid-2">
-        <p class="bloco-texto">O Brasil se consolidou como potência mundial na produção de embriões bovinos. Um simples fio de cabelo da cauda colhido ao nascer sequencia o DNA do bezerro, prevendo resistência a doenças e qualidade de carne. Quando encontram animais de "elite", os produtores usam a <mark>Fertilização In Vitro (FIV)</mark> — os óvulos são fecundados em laboratório e os embriões gerados em vacas receptoras. Uma única vaca de excelência pode deixar dezenas de descendentes em um só ano.</p>
-        <div class="bloco-img"><img src="Imagens/Fertilização In Vitro.jpg" alt="FIV" style="height:260px;"></div>
-        <p class="bloco-texto">A grande revolução é a velocidade da evolução. O que antes demorava décadas, <mark>agora é feito em 3 ou 4 anos.</mark> Um boi com genética superior cresce mais rápido, atinge o peso ideal de abate mais cedo e passa menos tempo no pasto emitindo metano. Essa tecnologia permite produzir muito mais carne e leite usando um número menor de animais e área menor de terra.</p>
+        <p class="bloco-texto">O Brasil se consolidou como potência mundial na produção de embriões bovinos. Um
+          simples fio de cabelo da cauda colhido ao nascer sequencia o DNA do bezerro, prevendo resistência a
+          doenças e qualidade de carne. Quando encontram animais de "elite", os produtores usam a
+          <mark>Fertilização In Vitro (FIV)</mark> — os óvulos são fecundados em laboratório e os embriões
+          gerados em vacas receptoras. Uma única vaca de excelência pode deixar dezenas de descendentes em um
+          só ano.
+        </p>
+        <div class="bloco-img"><img src="Imagens/Fertilização In Vitro.jpg" alt="FIV"></div>
+        <p class="bloco-texto">A grande revolução é a velocidade da evolução. O que antes demorava décadas,
+          <mark>agora é feito em 3 ou 4 anos.</mark> Um boi com genética superior cresce mais rápido, atinge o
+          peso ideal de abate mais cedo e passa menos tempo no pasto emitindo metano. Essa tecnologia permite
+          produzir muito mais carne e leite usando um número menor de animais e área menor de terra.
+        </p>
       </div>
     </section>
- 
+
     <!-- SEÇÃO 3 - EXPORTAÇÕES -->
     <section class="secao secao-exportacao">
       <h1 class="secao-titulo">Recorde nas Exportações (Março 2026)</h1>
       <div class="grid-3" style="align-items:center;">
-        <div class="bloco-img"><img src="Imagens/recordes históricos de preço.jpg" alt="Recordes" style="height:240px;"></div>
-        <p class="bloco-texto">O Brasil atingiu um faturamento recorde de <mark>US$ 68,24 milhões por dia</mark> em exportações de carne bovina, resultado direto do investimento em genética de ponta e eficiência produtiva. Graças à tecnologia do "boi precoce", o país entrega carne de alta qualidade em ciclos mais curtos, elevando o valor de mercado para o patamar histórico de US$ 5.687 por tonelada. Isso consolida o Brasil como fornecedor de proteína premium de alto valor agregado.</p>
-        <div class="bloco-img"><img src="Imagens/exportações de carne bovina.jpg" alt="Exportações" style="height:240px;"></div>
+        <div class="bloco-img"><img src="Imagens/recordes históricos de preço.jpg" alt="Recordes"></div>
+        <p class="bloco-texto">O Brasil atingiu um faturamento recorde de <mark>US$ 68,24 milhões por dia</mark>
+          em exportações de carne bovina, resultado direto do investimento em genética de ponta e eficiência
+          produtiva. Graças à tecnologia do "boi precoce", o país entrega carne de alta qualidade em ciclos
+          mais curtos, elevando o valor de mercado para o patamar histórico de US$ 5.687 por tonelada. Isso
+          consolida o Brasil como fornecedor de proteína premium de alto valor agregado.</p>
+        <div class="bloco-img"><img src="Imagens/exportações de carne bovina.jpg" alt="Exportações"></div>
       </div>
     </section>
- 
+
   </main>
- 
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div>
-        <img src="Imagens/2.png" alt="Logo">
+        <img src="Imagens/2.png" alt="Logo NutriCampo">
       </div>
       <div>
         <p class="footer-slogan">Tecnologia e sustentabilidade para a máxima produtividade no campo.</p>
         <div style="margin-top:16px; text-align:center;">
-          <p style="font-size:14px; margin-bottom:6px;" class="links"><a href="https://api.whatsapp.com/">whatsapp</a></p>
-          <p style="font-size:14px; margin-bottom:6px;" class="links"><a href="https://www.instagram.com/guilhermenves_/" style="color:#fff;">Instagram</a></p>
-          <p style="font-size:14px;" class="links"><a href="https://www.facebook.com/plantmaax" style="color:#fff;">Facebook</a></p>
+          <p style="font-size:14px; margin-bottom:6px;" class="links"><a href="https://api.whatsapp.com/"
+              target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+          <p style="font-size:14px; margin-bottom:6px;" class="links"><a
+              href="https://www.instagram.com/guilhermenves_/" target="_blank" rel="noopener noreferrer"
+              style="color:#fff;">Instagram</a></p>
+          <p style="font-size:14px;" class="links"><a href="https://www.facebook.com/plantmaax" target="_blank"
+              rel="noopener noreferrer" style="color:#fff;">Facebook</a></p>
         </div>
       </div>
       <div class="footer-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d519.3178698360501!2d-49.63234126396017!3d-22.898767540390182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1779123045498!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d519.3178698360501!2d-49.63234126396017!3d-22.898767540390182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1779123045498!5m2!1spt-BR!2sbr"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
     <div class="footer-bottom">
       &copy; 2026 NutriCampo — Todos os direitos reservados
     </div>
   </footer>
- 
+
 </body>
+
 </html>
