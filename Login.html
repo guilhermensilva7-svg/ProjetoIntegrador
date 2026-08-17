@@ -53,10 +53,11 @@
         <input type="password" id="senha" name="senha" placeholder="Mínimo 6 caracteres" required>
       </div>
 
-      <button type="submit" class="btn-submit" data-aos="fade-up" data-aos-delay="500">Criar minha conta</button>
+      <button type="button" class="btn-submit" data-aos="fade-up" onclick="verificarUsuario()" data-aos-delay="500"
+        onclick="window.location.href='index.html'" id="cadastro">Criar minha conta</button>
       <p class="ou">ou</p>
-      <button type="button" onclick="window.location.href='Login2.html'" class="btn-submitou" data-aos="fade-up"
-        data-aos-delay="600">Já tenho conta</button>
+      <button type="button" class="btn-submitou" data-aos="fade-up"
+        data-aos-delay="600" onclick="window.location.href='index.html'">Já tenho conta</button>
     </form>
   </div>
 
@@ -98,6 +99,23 @@
   <!-- SCRIPT DE INICIALIZAÇÃO DO AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    function verificarUsuario() {
+      var log = document.getElementById('usuario').value
+      var sen = document.getElementById('senha').value
+
+      if (log == 'admin' || sen == '12345') {
+        alert('Nome de usuário já cadastrado!')
+        window.location.href = 'index.html'
+      } else {
+        alert('Erro 404, por favor tente denovo')
+        window.location.href = 'Login.html'
+      }
+
+    }
+    
+
+
+
     AOS.init({
       once: true,
       duration: 800
