@@ -1,130 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - NutriCampo</title>
+  <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style/Login2.css">
+
+  <!-- FRAMEWORK DE ANIMAÇÃO (AOS) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- FRAMEWORK DE ÍCONES (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
- 
+
   <!-- HEADER -->
   <header>
     <nav>
-      <a href="Noticias.html">Notícias</a>
-      <a href="Sobre nós.html">Nós</a>
-      <a href="Login.html">Login</a>
-      <a href="Clientes.html">Clientes</a>
-      <img class="logo" src="Imagens/2.png">
+      <a href="Noticias.html"><i class="fa-regular fa-newspaper me-1"></i> Notícias</a>
+      <a href="Sobrenós.html"><i class="fa-solid fa-users me-1"></i> Nós</a>
+      <a href="Index.html"><i class="fa-solid fa-house me-1"></i> Início</a>
+      <a href="Clientes.html"><i class="fa-solid fa-address-book me-1"></i> Clientes</a>
     </nav>
+    <img class="logo" src="Imagens/2.png" alt="Logo NutriCampo">
   </header>
- 
-  <!-- CITAÇÃO -->
-  <div class="citacao">
-    <p>O mundo atual passa por uma profunda transformação impulsionada pela urgência climática e pela revolução tecnológica, realidades que dominam tanto o noticiário global quanto o dia a dia no campo. Na agropecuária, a produção tradicional cedeu espaço para um ecossistema de alta precisão, onde o uso de Inteligência Artificial, edição genética, bioinsumos, sensores vestíveis para o gado (IoT) e sistemas sustentáveis (como a Integração Lavoura-Pecuária-Floresta) trabalham juntos para garantir máxima produtividade, carne carbono neutro e rastreabilidade total via blockchain.</p>
+
+  <!-- CONTAINER PRINCIPAL DO FORMULÁRIO (Animação Zoom-In) -->
+  <div class="main-container" data-aos="zoom-in" data-aos-duration="800">
+    <h1 class="title">Entrar</h1>
+
+    <form method="post" action="#" class="registration-form">
+
+      <div class="input-group" data-aos="fade-up" data-aos-delay="200">
+        <label for="email">Usuário</label>
+        <input type="email" id="email" name="email" placeholder="Nome" required>
+      </div>
+
+
+      <div class="input-group" data-aos="fade-up" data-aos-delay="400">
+        <label for="senha">SENHA</label>
+        <input type="password" id="senha" name="senha" placeholder="Mínimo 6 caracteres" required>
+      </div>
+
+      <button type="submit" class="btn-submit" onclick="verificarUsuario()" data-aos="fade-up"
+        data-aos-delay="500">Logar</button>
+
+        <p class="ou">ou</p>
+        <button type="button" onclick="window.location.href='Login.html'" class="btn-submitou" data-aos="fade-up" data-aos-delay="600">Não possuo cadastro</button>
+      </a>
+    </form>
   </div>
-  <!-- CATÁLOGO HORIZONTAL -->
-  <section class="catalogo">
-    <h2 class="catalogo-titulo">Destaques</h2>
-    <div class="catalogo-faixa">
-      <div class="card">
-        <img src="Imagens/Sistema.jpg" alt="ILPF">
-        <p>Sistemas ILPF</p>
-      </div>
-      <div class="card">
-        <img src="Imagens/IoT.jpg" alt="IoT">
-        <p>IoT no Campo</p>
-      </div>
-      <div class="card">
-        <img src="Imagens/blockchain.jpg" alt="Blockchain">
-        <p>Blockchain e Rastreabilidade</p>
-      </div>
-      <div class="card">
-        <img src="Imagens/Fertilização In Vitro.jpg" alt="FIV">
-        <p>Fertilização In Vitro</p>
-      </div>
-      <div class="card">
-        <img src="Imagens/recordes históricos de preço.jpg" alt="Recordes">
-        <p>Recordes de Exportação</p>
-      </div>
-      <div class="card">
-        <img src="Imagens/exportações de carne bovina.jpg" alt="Exportações">
-        <p>Carne Premium Brasileira</p>
-      </div>
-    </div>
-  </section>
- 
-  <hr class="divisor">
- 
-  <main>
- 
-    <!-- SEÇÃO 1 -->
-    <section class="secao">
-      <h1 class="secao-titulo">Pecuária 4.0: Inovação e Sustentabilidade Redefinem o Futuro do Agro Brasileiro</h1>
-      <div class="grid-3">
-        <div>
-          <div class="bloco-img"><img src="Imagens/Sistema.jpg" alt="ILPF"></div>
-          <p class="bloco-texto" style="margin-top:14px;">Sistemas ILPF (Integração Lavoura-Pecuária-Floresta) e Pecuária de Baixo Carbono: O sistema ILPF alterna ou combina a criação de gado com o cultivo de grãos e o plantio de árvores em uma mesma área. As árvores fornecem sombra e capturam gases de efeito estufa. O resultado é a <mark>produção da chamada "carne carbono neutro"</mark>, uma exigência crescente dos mercados internacionais.</p>
-        </div>
-        <div>
-          <div class="bloco-img"><img src="Imagens/IoT.jpg" alt="IoT"></div>
-          <p class="bloco-texto" style="margin-top:14px;">A tecnologia vestível chegou ao pasto. Hoje, bovinos utilizam colares, brincos eletrônicos e sensores inteligentes <mark>conectados à Internet das Coisas (IoT).</mark> Esses dispositivos coletam dados 24h sobre saúde, movimentação e digestão de cada animal. Com IA, o produtor recebe alertas no celular para tratar doenças antes que se agravem.</p>
-        </div>
-        <div>
-          <div class="bloco-img"><img src="Imagens/blockchain.jpg" alt="Blockchain"></div>
-          <p class="bloco-texto" style="margin-top:14px;">Usando blockchain e monitoramento via satélite, é possível registrar todas as informações sobre a vida do animal, <mark>desde o seu nascimento até a chegada ao supermercado.</mark> Isso garante aos compradores que os produtos são livres de desmatamento e estão em conformidade com as leis ambientais e trabalhistas.</p>
-        </div>
-      </div>
-    </section>
- 
-    <hr class="divisor">
- 
-    <!-- SEÇÃO 2 -->
-    <section class="secao">
-      <h1 class="secao-titulo">Do Laboratório ao Pasto: O Salto Tecnológico da Nova Pecuária</h1>
-      <div class="grid-2">
-        <p class="bloco-texto">O Brasil se consolidou como potência mundial na produção de embriões bovinos. Um simples fio de cabelo da cauda colhido ao nascer sequencia o DNA do bezerro, prevendo resistência a doenças e qualidade de carne. Quando encontram animais de "elite", os produtores usam a <mark>Fertilização In Vitro (FIV)</mark> — os óvulos são fecundados em laboratório e os embriões gerados em vacas receptoras. Uma única vaca de excelência pode deixar dezenas de descendentes em um só ano.</p>
-        <div class="bloco-img"><img src="Imagens/Fertilização In Vitro.jpg" alt="FIV" style="height:260px;"></div>
-        <p class="bloco-texto">A grande revolução é a velocidade da evolução. O que antes demorava décadas, <mark>agora é feito em 3 ou 4 anos.</mark> Um boi com genética superior cresce mais rápido, atinge o peso ideal de abate mais cedo e passa menos tempo no pasto emitindo metano. Essa tecnologia permite produzir muito mais carne e leite usando um número menor de animais e área menor de terra.</p>
-      </div>
-    </section>
- 
-    <!-- SEÇÃO 3 - EXPORTAÇÕES -->
-    <section class="secao secao-exportacao">
-      <h1 class="secao-titulo">Recorde nas Exportações (Março 2026)</h1>
-      <div class="grid-3" style="align-items:center;">
-        <div class="bloco-img"><img src="Imagens/recordes históricos de preço.jpg" alt="Recordes" style="height:240px;"></div>
-        <p class="bloco-texto">O Brasil atingiu um faturamento recorde de <mark>US$ 68,24 milhões por dia</mark> em exportações de carne bovina, resultado direto do investimento em genética de ponta e eficiência produtiva. Graças à tecnologia do "boi precoce", o país entrega carne de alta qualidade em ciclos mais curtos, elevando o valor de mercado para o patamar histórico de US$ 5.687 por tonelada. Isso consolida o Brasil como fornecedor de proteína premium de alto valor agregado.</p>
-        <div class="bloco-img"><img src="Imagens/exportações de carne bovina.jpg" alt="Exportações" style="height:240px;"></div>
-      </div>
-    </section>
- 
-  </main>
- 
-  <!-- FOOTER -->
+
+  <!-- FOOTER COM ÍCONES -->
   <footer>
     <div class="footer-inner">
       <div>
-        <img src="Imagens/2.png" alt="Logo">
+        <img src="Imagens/2.png" alt="Logo NutriCampo">
       </div>
       <div>
         <p class="footer-slogan">Tecnologia e sustentabilidade para a máxima produtividade no campo.</p>
         <div style="margin-top:16px; text-align:center;">
-          <p style="font-size:14px; margin-bottom:6px;" class="links"><a href="https://api.whatsapp.com/">whatsapp</a></p>
-          <p style="font-size:14px; margin-bottom:6px;" class="links"><a href="https://www.instagram.com/guilhermenves_/" style="color:#fff;">Instagram</a></p>
-          <p style="font-size:14px;" class="links"><a href="https://www.facebook.com/plantmaax" style="color:#fff;">Facebook</a></p>
+          <p style="font-size:15px; margin-bottom:8px;" class="links">
+            <a href="https://api.whatsapp.com/" target="_blank" rel="noopener noreferrer"><i
+                class="fa-brands fa-whatsapp me-2" style="color:#25d366;"></i>WhatsApp</a>
+          </p>
+          <p style="font-size:15px; margin-bottom:8px;" class="links">
+            <a href="https://www.instagram.com/guilhermenves_/" target="_blank" rel="noopener noreferrer"><i
+                class="fa-brands fa-instagram me-2" style="color:#e1306c;"></i>Instagram</a>
+          </p>
+          <p style="font-size:15px;" class="links">
+            <a href="https://www.facebook.com/plantmaax" target="_blank" rel="noopener noreferrer"><i
+                class="fa-brands fa-facebook me-2" style="color:#1877f2;"></i>Facebook</a>
+          </p>
         </div>
       </div>
       <div class="footer-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d519.3178698360501!2d-49.63234126396017!3d-22.898767540390182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1779123045498!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d519.3178698360501!2d-49.63234126396017!3d-22.898767540390182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1779123045498!5m2!1spt-BR!2sbr"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
     <div class="footer-bottom">
       &copy; 2026 NutriCampo — Todos os direitos reservados
     </div>
   </footer>
- 
+
+  <!-- SCRIPT DE INICIALIZAÇÃO DO AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    function verificarUsuario() {
+      var log = document.getElementById('email').value
+      var sen = document.getElementById('senha').value
+
+      if (log == 'admin' && sen == '12345') {
+        alert('Login realizado com sucesso')
+        window.location.href = 'home.html'
+      } else {
+        alert('Usuário não localizado')
+        window.location.href = 'index.html'
+      }
+
+    }
+
+
+
+    AOS.init({
+      once: true,
+      duration: 800
+    });
+  </script>
 </body>
+
 </html>
