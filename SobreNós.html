@@ -1,425 +1,114 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nós - NutriCampo</title>
     <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/Sobre-nos.css">
 
-    <!-- AOS Animation Framework -->
+    <!-- FRAMEWORK DE ANIMAÇÃO (AOS) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
+    <!-- FRAMEWORK DE ÍCONES (Font Awesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <style>
-        :root {
-            --primary-color: #5a2d82;
-            --primary-hover: #401f5e;
-            --primary-light: rgba(90, 45, 130, 0.12);
-            --text-color: #333333;
-            --bg-light: #f8f9fa;
-            --white: #ffffff;
-            --border-radius: 12px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-            background-color: var(--bg-light);
-        }
-
-        mark {
-            background-color: var(--primary-light);
-            color: var(--primary-color);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        /* HEADER ROXO */
-        .header {
-            background: var(--primary-color);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            max-height: 50px;
-            width: auto;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        /* LINKS DO HEADER EM BRANCO */
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--white);
-            font-weight: 500;
-            transition: opacity 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-menu a:hover {
-            opacity: 0.8;
-            color: var(--white);
-        }
-
-        /* BOTÃO LOGIN EM DESTAQUE (FUNDO BRANCO) */
-        .btn-login {
-            background-color: var(--white);
-            color: var(--primary-color) !important;
-            padding: 0.5rem 1.2rem;
-            border-radius: 20px;
-            font-weight: 600;
-            transition: background-color 0.3s, opacity 0.3s !important;
-        }
-
-        .btn-login:hover {
-            background-color: rgba(255, 255, 255, 0.9) !important;
-            opacity: 1 !important;
-        }
-
-        /* CONTEÚDO PRINCIPAL */
-        .main-content {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .hero-citacao {
-            background: var(--white);
-            border-left: 5px solid var(--primary-color);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            font-size: 1.15rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-bottom: 2.5rem;
-        }
-
-        .sobre-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .card-texto {
-            background: var(--white);
-            padding: 1.5rem 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-
-        .bloco-destaque {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            background: var(--white);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-
-        .texto-destaque {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .imagem-destaque {
-            flex: 1;
-        }
-
-        .imagem-destaque img {
-            width: 100%;
-            height: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: var(--border-radius);
-        }
-
-        .grid-cards-duplo {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        /* SEÇÃO OBJETIVOS */
-        .secao-objetivos {
-            margin-top: 3.5rem;
-        }
-
-        .secao-titulo {
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-        }
-
-        .grid-objetivos {
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .grid-objetivos img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: var(--border-radius);
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-            margin-top: 4rem;
-            padding-top: 3rem;
-        }
-
-        .footer-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-
-        .footer-brand img {
-            max-height: 50px;
-            margin-bottom: 1rem;
-        }
-
-        .footer-slogan {
-            font-size: 0.95rem;
-            color: #aaa;
-        }
-
-        .footer-social h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .social-links a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .social-links a:hover {
-            color: var(--white);
-        }
-
-        .color-wa { color: #25d366; }
-        .color-ig { color: #e1306c; }
-        .color-fb { color: #1877f2; }
-
-        .footer-map iframe {
-            width: 100%;
-            height: 180px;
-            border-radius: 8px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: #111;
-            font-size: 0.85rem;
-            border-top: 1px solid #222;
-        }
-
-        /* RESPONSIVIDADE */
-        @media (max-width: 900px) {
-            .bloco-destaque {
-                flex-direction: column;
-            }
-
-            .grid-cards-duplo {
-                grid-template-columns: 1fr;
-            }
-
-            .grid-objetivos {
-                grid-template-columns: 1fr;
-            }
-
-            .grid-objetivos img {
-                height: 250px;
-            }
-
-            .footer-inner {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-menu {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
 
     <!-- HEADER -->
-    <header class="header">
-        <div class="header-container">
-            <a href="Index.html" class="logo-link">
-                <img class="logo" src="Imagens/2.png" alt="Logo NutriCampo">
-            </a>
-            <nav class="nav-menu">
-                <a href="Index.html"><i class="fa-solid fa-house"></i> Início</a>
-                <a href="Noticias.html"><i class="fa-regular fa-newspaper"></i> Notícias</a>
-                <a href="Clientes.html"><i class="fa-solid fa-address-book"></i> Clientes</a>
-                <a href="Login.html" class="btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-            </nav>
-        </div>
+    <header>
+        <img class="logo" src="Imagens/2.png" alt="Logo NutriCampo">
+        <nav>
+            <a href="Noticias.html"><i class="fa-regular fa-newspaper me-1"></i> Notícias</a>
+            <a href="Login.html"><i class="fa-solid fa-right-to-bracket me-1"></i> Login</a>
+            <a href="Index.html"><i class="fa-solid fa-house me-1"></i> Início</a>
+            <a href="Clientes.html"><i class="fa-solid fa-address-book me-1"></i> Clientes</a>
+        </nav>
     </header>
 
-    <main class="main-content">
-        <!-- HERO / CITAÇÃO -->
-        <section class="hero-citacao" data-aos="fade-up" data-aos-duration="1000">
-            <p>
-                Nossa empresa atua na área de informação sobre pecuária, levando notícias, novidades e informações
-                importantes para produtores, profissionais do agronegócio e pessoas interessadas no setor.
-                Nosso objetivo é manter o público sempre atualizado sobre o que acontece no
-                <mark>mercado pecuário</mark>, novas tecnologias, produção e tendências do campo.
+    <!-- CITAÇÃO HERO (Animação Fade-Up) -->
+    <div class="citacao-hero" data-aos="fade-up" data-aos-duration="1000">
+        Nossa empresa atua na área de informação sobre pecuária, levando notícias, novidades e informações
+        importantes para produtores, profissionais do agronegócio e pessoas interessadas no setor.
+        Nosso objetivo é manter o público sempre atualizado sobre o que acontece no
+        <mark>mercado pecuário</mark>, novas tecnologias, produção e tendências do campo.
+    </div>
+
+    <!-- CONTEÚDO -->
+    <div class="conteudo">
+
+        <div class="bloco" data-aos="fade-up">
+            Nossa empresa <mark>atua na área de notícias sobre pecuária</mark>, levando informações importantes
+            para produtores, profissionais do agronegócio e pessoas interessadas no setor. Nosso objetivo é
+            manter o público sempre atualizado sobre o mercado pecuário, novas tecnologias, produção e
+            tendências do campo.
+        </div>
+
+        <div class="bloco-com-img" data-aos="fade-up" data-aos-delay="100">
+            <p data-aos="fade-right">
+                Iniciamos nossas atividades há 22 anos, por meio de jornais impressos, onde construímos nossa
+                credibilidade e conquistamos leitores ao longo do tempo. Durante esse período, sempre buscamos
+                levar informações confiáveis e relevantes para o setor agropecuário.<br><br>
+                Com o avanço da tecnologia e da comunicação digital, decidimos
+                <mark>expandir nosso trabalho para a internet</mark>. Agora, por meio do nosso site, buscamos
+                alcançar um público ainda maior, levando notícias de forma rápida, acessível e confiável.
             </p>
-        </section>
+            <img src="Imagens/Pecuariaboi.jpg" alt="Pecuária" data-aos="zoom-in" data-aos-delay="200">
+        </div>
 
-        <!-- SOBRE NÓS E HISTÓRIA -->
-        <section class="sobre-container">
-            <article class="card-texto" data-aos="fade-up">
-                <p>
-                    Com um olhar atento ao campo, nos dedicamos a entregar análises precisas, cotações em tempo real e
-                    matérias exclusivas. Acreditamos que a <mark>informação de qualidade</mark> é a principal ferramenta
-                    para que o produtor rural possa tomar decisões estratégicas e impulsionar seus resultados.
-                </p>
-            </article>
+        <div class="bloco" data-aos="fade-up">
+            Além das notícias sobre pecuária, <mark>nosso site também contará com uma página de vagas de emprego</mark>,
+            com o objetivo de ajudar profissionais do setor agropecuário a encontrar novas oportunidades de
+            trabalho e conectar empresas a novos talentos.
+        </div>
 
-            <article class="bloco-destaque" data-aos="fade-up" data-aos-delay="100">
-                <div class="texto-destaque" data-aos="fade-right">
-                    <p>
-                        Iniciamos nossas atividades há 22 anos, por meio de jornais impressos, onde construímos nossa
-                        credibilidade e conquistamos leitores ao longo do tempo. Durante esse período, sempre buscamos
-                        levar informações confiáveis e relevantes para o setor agropecuário.
-                    </p>
-                    <p>
-                        Com o avanço da tecnologia e da comunicação digital, decidimos
-                        <mark>expandir nosso trabalho para a internet</mark>. Agora, por meio do nosso site, buscamos
-                        alcançar um público ainda maior, levando notícias de forma rápida, acessível e confiável.
-                    </p>
-                </div>
-                <div class="imagem-destaque" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="Imagens/confinamento.png" alt="Pecuária NutriCampo">
-                </div>
-            </article>
+        <div class="bloco" data-aos="fade-up">
+            Nosso compromisso continua sendo <mark>informar com responsabilidade e contribuir para o crescimento
+            e desenvolvimento da pecuária.</mark>
+        </div>
 
-            <div class="grid-cards-duplo">
-                <article class="card-texto" data-aos="fade-up">
-                    <p>
-                        Além das notícias sobre pecuária, <mark>nosso site também contará com uma página de vagas de emprego</mark>,
-                        com o objetivo de ajudar profissionais do setor agropecuário a encontrar novas oportunidades de
-                        trabalho e conectar empresas a novos talentos.
-                    </p>
-                </article>
+    </div>
 
-                <article class="card-texto" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        Nosso compromisso continua sendo <mark>informar com responsabilidade e contribuir para o crescimento
-                        e desenvolvimento da pecuária.</mark>
-                    </p>
-                </article>
-            </div>
-        </section>
+    <!-- SEÇÃO: O QUE BUSCAMOS -->
+    <section class="secao" data-aos="fade-up">
+        <h1 class="secao-titulo">O Que Nossa Empresa Busca</h1>
+        <div class="grid-3">
+            <img src="Imagens/Tecnologia.jpg" alt="Tecnologia" data-aos="fade-right" data-aos-delay="100">
+            <p data-aos="fade-up" data-aos-delay="200">
+                Nossa empresa busca transformar a pecuária através da
+                <mark>inovação, tecnologia e sustentabilidade.</mark>
+                Trabalhamos para desenvolver soluções modernas que aumentem a produtividade, melhorem a
+                qualidade da produção e reduzam impactos ambientais. Nosso objetivo é conectar o campo às
+                novas tecnologias, promovendo uma pecuária mais eficiente, inteligente e preparada para o
+                futuro. Também buscamos fortalecer o agronegócio brasileiro com responsabilidade, evolução
+                constante e compromisso com a excelência.
+            </p>
+            <img src="Imagens/Sustentavel.jpg" alt="Sustentabilidade" data-aos="fade-left" data-aos-delay="300">
+        </div>
+    </section>
 
-        <!-- SEÇÃO: O QUE BUSCAMOS -->
-        <section class="secao-objetivos" data-aos="fade-up">
-            <h2 class="secao-titulo">O Que Nossa Empresa Busca</h2>
-            <div class="grid-objetivos">
-                <img src="Imagens/Tecnologia.jpg" alt="Tecnologia no campo" data-aos="fade-right" data-aos-delay="100">
-                <p data-aos="fade-up" data-aos-delay="200">
-                    Nossa empresa busca transformar a pecuária através da
-                    <mark>inovação, tecnologia e sustentabilidade.</mark>
-                    Trabalhamos para desenvolver soluções modernas que aumentem a produtividade, melhorem a
-                    qualidade da produção e reduzam impactos ambientais. Nosso objetivo é conectar o campo às
-                    novas tecnologias, promovendo uma pecuária mais eficiente, inteligente e preparada para o
-                    futuro. Também buscamos fortalecer o agronegócio brasileiro com responsabilidade, evolução
-                    constante e compromisso com a excelência.
-                </p>
-                <img src="Imagens/Sustentavel.jpg" alt="Pecuária Sustentável" data-aos="fade-left" data-aos-delay="300">
-            </div>
-        </section>
-    </main>
+    <hr>
 
-    <!-- FOOTER -->
+    <!-- FOOTER COM ÍCONES -->
     <footer>
         <div class="footer-inner">
-            <div class="footer-brand">
-                <img src="Imagens/2.png" alt="Logo NutriCampo">
+            <div>
+                <img src="Imagens/2.png" alt="Logo">
+            </div>
+            <div>
                 <p class="footer-slogan">Tecnologia e sustentabilidade para a máxima produtividade no campo.</p>
+                <div style="margin-top:16px; text-align:center;">
+                    <p style="font-size:15px; margin-bottom:8px;" class="links">
+                        <a href="https://api.whatsapp.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp me-2" style="color:#25d366;"></i>Whatsapp</a>
+                    </p>
+                    <p style="font-size:15px; margin-bottom:8px;" class="links">
+                        <a href="https://www.instagram.com/guilhermenves_/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram me-2" style="color:#e1306c;"></i>Instagram</a>
+                    </p>
+                    <p style="font-size:15px;" class="links">
+                        <a href="https://www.facebook.com/plantmaax" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook me-2" style="color:#1877f2;"></i>Facebook</a>
+                    </p>
+                </div>
             </div>
-
-            <div class="footer-social">
-                <h3>Conecte-se conosco</h3>
-                <nav class="social-links">
-                    <a href="https://api.whatsapp.com/" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-whatsapp color-wa"></i> WhatsApp
-                    </a>
-                    <a href="https://www.instagram.com/guilhermenves_/" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-instagram color-ig"></i> Instagram
-                    </a>
-                    <a href="https://www.facebook.com/plantmaax" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-facebook color-fb"></i> Facebook
-                    </a>
-                </nav>
-            </div>
-
             <div class="footer-map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d519.3178698360501!2d-49.63234126396017!3d-22.898767540390182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1779123045498!5m2!1spt-BR!2sbr"
@@ -428,13 +117,12 @@
                 </iframe>
             </div>
         </div>
-
         <div class="footer-bottom">
             &copy; 2026 NutriCampo — Todos os direitos reservados
         </div>
     </footer>
 
-    <!-- SCRIPT AOS -->
+    <!-- SCRIPT DE INICIALIZAÇÃO DO AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
