@@ -4,527 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes - NutriCampo</title>
-    
-    <!-- FAVICON -->
     <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/Clientes.css">
 
     <!-- FRAMEWORK DE ANIMAÇÃO (AOS) -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- FRAMEWORK DE ÍCONES (Font Awesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <style>
-        /* RESET BÁSICO */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            color: #2b2b2b;
-            background-color: #f8f9fa;
-            line-height: 1.6;
-        }
-
-        /* HEADER & NAVEGAÇÃO */
-        .main-header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            max-height: 45px;
-            width: auto;
-            display: block;
-        }
-
-        .main-nav {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .main-nav a {
-            text-decoration: none;
-            color: #4a5568;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.2s ease;
-        }
-
-        .main-nav a:hover {
-            color: #2e7d32;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
-            color: #ffffff;
-            text-align: center;
-            padding: 4rem 1.5rem;
-        }
-
-        .hero-inner {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero-label {
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            color: #b7e4c7;
-            font-weight: 700;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin: 0.5rem 0 1rem;
-        }
-
-        /* ESTATÍSTICAS / NÚMEROS */
-        .numeros-container {
-            max-width: 1100px;
-            margin: -2rem auto 3rem;
-            padding: 0 1.5rem;
-        }
-
-        .numeros-grid {
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            padding: 1.5rem;
-            gap: 1.5rem;
-            text-align: center;
-        }
-
-        .numero-item {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .numero-valor {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #2d6a4f;
-        }
-
-        .numero-item.destaque .numero-valor {
-            font-size: 2.25rem;
-            color: #1b4332;
-        }
-
-        .numero-label {
-            font-size: 0.9rem;
-            color: #6c757d;
-        }
-
-        /* FEEDBACKS */
-        .feedbacks-section {
-            max-width: 1200px;
-            margin: 0 auto 4rem;
-            padding: 0 1.5rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-titulo {
-            font-size: 2rem;
-            color: #1b4332;
-        }
-
-        .section-sub {
-            color: #6c757d;
-        }
-
-        .feedbacks-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card-feedback {
-            background: #ffffff;
-            border-radius: 10px;
-            padding: 1.5rem;
-            border: 1px solid #e9ecef;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .card-feedback:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-
-        .card-feedback.destaque {
-            border-color: #52b788;
-            background-color: #f7bf670d;
-        }
-
-        .estrelas {
-            color: #ffc107;
-            margin-bottom: 0.75rem;
-        }
-
-        .feedback-texto {
-            font-style: italic;
-            color: #495057;
-            margin-bottom: 1.5rem;
-        }
-
-        .feedback-autor {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .avatar {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background-color: #2d6a4f;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .autor-info strong {
-            display: block;
-            color: #212529;
-        }
-
-        .autor-info span {
-            font-size: 0.85rem;
-            color: #6c757d;
-        }
-
-        /* CTA */
-        .cta-section {
-            background: #1b4332;
-            color: white;
-            text-align: center;
-            padding: 3.5rem 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto 4rem;
-            border-radius: 12px;
-        }
-
-        .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .cta-section p {
-            color: #b7e4c7;
-            margin-bottom: 1.5rem;
-        }
-
-        .btn-cta {
-            display: inline-block;
-            background-color: #52b788;
-            color: #1b4332;
-            padding: 0.8rem 2rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: background 0.2s ease;
-        }
-
-        .btn-cta:hover {
-            background-color: #74c69d;
-        }
-
-        /* FOOTER */
-        .main-footer {
-            background-color: #111827;
-            color: #d1d5db;
-            padding-top: 3rem;
-        }
-
-        .footer-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-brand img {
-            max-height: 40px;
-            margin-bottom: 1rem;
-        }
-
-        .footer-social h3 {
-            color: white;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-links {
-            list-style: none;
-        }
-
-        .social-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .social-links a {
-            color: #d1d5db;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .footer-map iframe {
-            width: 100%;
-            height: 150px;
-            border-radius: 8px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #1f2937;
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 0.85rem;
-            color: #9ca3af;
-        }
-
-        /* RESPONSIVIDADE */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .main-nav {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
 </head>
 <body>
 
     <!-- HEADER -->
-    <header class="main-header">
-        <div class="header-container">
-            <a href="Index.html" class="logo-link">
-                <img class="logo" src="Imagens/2.png" alt="Logo NutriCampo">
-            </a>
-            <nav class="main-nav">
-                <a href="Index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Início</a>
-                <a href="Noticias.html"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> Notícias</a>
-                <a href="Sobrenós.html"><i class="fa-solid fa-users" aria-hidden="true"></i> Nós</a>
-                <a href="Login.html" class="nav-btn-login"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> Login</a>
-            </nav>
-        </div>
+    <header>
+        <img class="logo" src="Imagens/2.png" alt="Logo NutriCampo">
+        <nav>
+            <a href="Noticias.html"><i class="fa-regular fa-newspaper me-1"></i> Notícias</a>
+            <a href="Sobrenós.html"><i class="fa-solid fa-users me-1"></i> Nós</a>
+            <a href="Login.html"><i class="fa-solid fa-right-to-bracket me-1"></i> Login</a>
+            <a href="Index.html"><i class="fa-solid fa-house me-1"></i> Início</a>
+        </nav>
     </header>
 
-    <main>
-        <!-- HERO -->
-        <section class="hero" data-aos="fade-down">
-            <div class="hero-inner">
-                <span class="hero-label">Nossos Clientes</span>
-                <h1>Quem Confia na NutriCampo</h1>
-                <p>Produtores, pecuaristas e profissionais do agronegócio que fazem parte da nossa história.</p>
-            </div>
-        </section>
+    <!-- HERO (Animação Fade-Down) -->
+    <div class="hero" data-aos="fade-down" data-aos-duration="1000">
+        <div class="hero-inner">
+            <span class="hero-label">Nossos Clientes</span>
+            <h1>Quem Confia na NutriCampo</h1>
+            <p>Produtores, pecuaristas e profissionais do agronegócio que fazem parte da nossa história.</p>
+        </div>
+    </div>
 
-        <!-- NÚMEROS / ESTATÍSTICAS -->
-        <section class="numeros-container" data-aos="zoom-in">
-            <div class="numeros-grid">
-                <div class="numero-item destaque">
-                    <span class="numero-valor">+4.800</span>
-                    <span class="numero-label">Clientes ativos</span>
+    <!-- NÚMEROS (Animação Zoom-In) -->
+    <div class="numeros" data-aos="zoom-in" data-aos-duration="800">
+        <div class="numero-item-destaque">
+            <span class="numero-valor-destaque">+4.800</span>
+            <span class="numero-label">Clientes ativos</span>
+        </div>
+        <div class="numero-item">
+            <span class="numero-valor">22</span>
+            <span class="numero-label">Anos de mercado</span>
+        </div>
+        <div class="numero-item">
+            <span class="numero-valor">98%</span>
+            <span class="numero-label">Satisfação</span>
+        </div>
+        <div class="numero-item">
+            <span class="numero-valor">12</span>
+            <span class="numero-label">Estados atendidos</span>
+        </div>
+    </div>
+
+    <!-- FEEDBACKS -->
+    <div class="feedbacks-section">
+        <h2 class="section-titulo" data-aos="fade-up">O que dizem nossos clientes</h2>
+        <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Depoimentos reais de quem usa a NutriCampo no dia a dia.</p>
+
+        <div class="feedbacks-grid">
+
+            <div class="card-feedback" data-aos="fade-up" data-aos-delay="100">
+                <div class="estrelas">★★★★★</div>
+                <p class="feedback-texto">"A NutriCampo mudou a forma como acompanho o mercado. As notícias chegam antes de qualquer outro portal e as análises são precisas. Indispensável para quem leva a pecuária a sério."</p>
+                <div class="feedback-autor">
+                    <div class="avatar">MR</div>
+                    <div>
+                        <strong>Marcelo Rocha</strong>
+                        <span>Pecuarista — Mato Grosso do Sul</span>
+                    </div>
                 </div>
-                <div class="numero-item">
-                    <span class="numero-valor">22</span>
-                    <span class="numero-label">Anos de mercado</span>
-                </div>
-                <div class="numero-item">
-                    <span class="numero-valor">98%</span>
-                    <span class="numero-label">Satisfação</span>
-                </div>
-                <div class="numero-item">
-                    <span class="numero-valor">12</span>
-                    <span class="numero-label">Estados atendidos</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- FEEDBACKS -->
-        <section class="feedbacks-section">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-titulo">O que dizem nossos clientes</h2>
-                <p class="section-sub">Depoimentos reais de quem usa a NutriCampo no dia a dia.</p>
             </div>
 
-            <div class="feedbacks-grid">
-
-                <article class="card-feedback" data-aos="fade-up" data-aos-delay="100">
-                    <div class="estrelas" aria-label="Avaliação: 5 de 5 estrelas">★★★★★</div>
-                    <p class="feedback-texto">"A NutriCampo mudou a forma como acompanho o mercado. As notícias chegam antes de qualquer outro portal e as análises são precisas. Indispensável para quem leva a pecuária a sério."</p>
-                    <div class="feedback-autor">
-                        <div class="avatar" aria-hidden="true">MR</div>
-                        <div class="autor-info">
-                            <strong>Marcelo Rocha</strong>
-                            <span>Pecuarista — Mato Grosso do Sul</span>
-                        </div>
+            <div class="card-feedback destaque" data-aos="fade-up" data-aos-delay="200">
+                <div class="estrelas">★★★★★</div>
+                <p class="feedback-texto">"Assino desde quando era jornal impresso. A transição para o digital foi impecável — mantiveram a qualidade e ganharam velocidade. Minha referência diária no agronegócio."</p>
+                <div class="feedback-autor">
+                    <div class="avatar">AS</div>
+                    <div>
+                        <strong>Ana Souza</strong>
+                        <span>Zootecnista — Goiás</span>
                     </div>
-                </article>
-
-                <article class="card-feedback destaque" data-aos="fade-up" data-aos-delay="200">
-                    <div class="estrelas" aria-label="Avaliação: 5 de 5 estrelas">★★★★★</div>
-                    <p class="feedback-texto">"Assino desde quando era jornal impresso. A transição para o digital foi impecável — mantiveram a qualidade e ganharam velocidade. Minha referência diária no agronegócio."</p>
-                    <div class="feedback-autor">
-                        <div class="avatar" aria-hidden="true">AS</div>
-                        <div class="autor-info">
-                            <strong>Ana Souza</strong>
-                            <span>Zootecnista — Goiás</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card-feedback" data-aos="fade-up" data-aos-delay="300">
-                    <div class="estrelas" aria-label="Avaliação: 5 de 5 estrelas">★★★★★</div>
-                    <p class="feedback-texto">"As notícias sobre genética bovina e tecnologia no campo são o diferencial. Encontro aqui o que não acho em nenhum outro veículo. Recomendo a todos os colegas produtores."</p>
-                    <div class="feedback-autor">
-                        <div class="avatar" aria-hidden="true">RF</div>
-                        <div class="autor-info">
-                            <strong>Roberto Figueiredo</strong>
-                            <span>Produtor rural — São Paulo</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card-feedback" data-aos="fade-up" data-aos-delay="100">
-                    <div class="estrelas" aria-label="Avaliação: 4 de 5 estrelas">★★★★☆</div>
-                    <p class="feedback-texto">"Plataforma muito completa. Uso principalmente para acompanhar os preços de exportação e tendências de mercado. Me ajuda muito na tomada de decisão da fazenda."</p>
-                    <div class="feedback-autor">
-                        <div class="avatar" aria-hidden="true">LC</div>
-                        <div class="autor-info">
-                            <strong>Luiza Campos</strong>
-                            <span>Consultora agropecuária — Minas Gerais</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card-feedback" data-aos="fade-up" data-aos-delay="200">
-                    <div class="estrelas" aria-label="Avaliação: 5 de 5 estrelas">★★★★★</div>
-                    <p class="feedback-texto">"Conteúdo de altíssimo nível. A cobertura sobre blockchain e rastreabilidade foi fundamental para eu entender como preparar minha propriedade para as novas exigências da UE."</p>
-                    <div class="feedback-autor">
-                        <div class="avatar" aria-hidden="true">JP</div>
-                        <div class="autor-info">
-                            <strong>João Pedro Alves</strong>
-                            <span>Pecuarista exportador — Pará</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card-feedback" data-aos="fade-up" data-aos-delay="300">
-                    <div class="estrelas" aria-label="Avaliação: 5 de 5 estrelas">★★★★★</div>
-                    <p class="feedback-texto">"Melhor portal do agro do Brasil. Sempre atualizado, linguagem acessível e profundidade técnica quando precisa. A página de vagas também me ajudou a contratar dois ótimos profissionais."</p>
-                    <div class="feedback-autor">
-                        <div class="avatar" aria-hidden="true">CT</div>
-                        <div class="autor-info">
-                            <strong>Cláudio Teixeira</strong>
-                            <span>Gestor de fazenda — Mato Grosso</span>
-                        </div>
-                    </div>
-                </article>
-
+                </div>
             </div>
-        </section>
 
-        <!-- CTA -->
-        <section class="cta-section" data-aos="zoom-in">
-            <h2>Faça parte da nossa comunidade</h2>
-            <p>Junte-se a mais de 4.800 profissionais que já confiam na NutriCampo.</p>
-            <a href="Login.html" class="btn-cta">Criar minha conta</a>
-        </section>
-    </main>
+            <div class="card-feedback" data-aos="fade-up" data-aos-delay="300">
+                <div class="estrelas">★★★★★</div>
+                <p class="feedback-texto">"As notícias sobre genética bovina e tecnologia no campo são o diferencial. Encontro aqui o que não acho em nenhum outro veículo. Recomendo a todos os colegas produtores."</p>
+                <div class="feedback-autor">
+                    <div class="avatar">RF</div>
+                    <div>
+                        <strong>Roberto Figueiredo</strong>
+                        <span>Produtor rural — São Paulo</span>
+                    </div>
+                </div>
+            </div>
 
-    <!-- FOOTER -->
-    <footer class="main-footer">
+            <div class="card-feedback" data-aos="fade-up" data-aos-delay="100">
+                <div class="estrelas">★★★★☆</div>
+                <p class="feedback-texto">"Plataforma muito completa. Uso principalmente para acompanhar os preços de exportação e tendências de mercado. Me ajuda muito na tomada de decisão da fazenda."</p>
+                <div class="feedback-autor">
+                    <div class="avatar">LC</div>
+                    <div>
+                        <strong>Luiza Campos</strong>
+                        <span>Consultora agropecuária — Minas Gerais</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-feedback" data-aos="fade-up" data-aos-delay="200">
+                <div class="estrelas">★★★★★</div>
+                <p class="feedback-texto">"Conteúdo de altíssimo nível. A cobertura sobre blockchain e rastreabilidade foi fundamental para eu entender como preparar minha propriedade para as novas exigências da UE."</p>
+                <div class="feedback-autor">
+                    <div class="avatar">JP</div>
+                    <div>
+                        <strong>João Pedro Alves</strong>
+                        <span>Pecuarista exportador — Pará</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-feedback" data-aos="fade-up" data-aos-delay="300">
+                <div class="estrelas">★★★★★</div>
+                <p class="feedback-texto">"Melhor portal do agro do Brasil. Sempre atualizado, linguagem acessível e profundidade técnica quando precisa. A página de vagas também me ajudou a contratar dois ótimos profissionais."</p>
+                <div class="feedback-autor">
+                    <div class="avatar">CT</div>
+                    <div>
+                        <strong>Cláudio Teixeira</strong>
+                        <span>Gestor de fazenda — Mato Grosso</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section" data-aos="zoom-in" data-aos-duration="800">
+        <h2>Faça parte da nossa comunidade</h2>
+        <p>Junte-se a mais de 4.800 profissionais que já confiam na NutriCampo.</p>
+        <a href="Login.html" class="btn-cta">Criar minha conta</a>
+    </div>
+
+    <hr>
+
+    <!-- FOOTER COM ÍCONES -->
+    <footer>
         <div class="footer-inner">
-            <div class="footer-brand">
-                <img src="Imagens/2.png" alt="Logo NutriCampo">
+            <div>
+                <img src="Imagens/2.png" alt="Logo">
+            </div>
+            <div>
                 <p class="footer-slogan">Tecnologia e sustentabilidade para a máxima produtividade no campo.</p>
+                <div style="margin-top:16px; text-align:center;">
+                    <p style="font-size:15px; margin-bottom:8px;" class="links">
+                        <a href="https://api.whatsapp.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp me-2" style="color:#25d366;"></i>WhatsApp</a>
+                    </p>
+                    <p style="font-size:15px; margin-bottom:8px;" class="links">
+                        <a href="https://www.instagram.com/guilhermenves_/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram me-2" style="color:#e1306c;"></i>Instagram</a>
+                    </p>
+                    <p style="font-size:15px;" class="links">
+                        <a href="https://www.facebook.com/plantmaax" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook me-2" style="color:#1877f2;"></i>Facebook</a>
+                    </p>
+                </div>
             </div>
-            
-            <div class="footer-social">
-                <h3>Redes & Contato</h3>
-                <ul class="social-links">
-                    <li>
-                        <a href="https://api.whatsapp.com/" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> WhatsApp
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/guilhermenves_/" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-instagram" style="color:#e1306c;"></i> Instagram
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/plantmaax" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-facebook" style="color:#1877f2;"></i> Facebook
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
             <div class="footer-map">
                 <iframe
-                    title="Localização NutriCampo"
                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d519.3178698360501!2d-49.63234126396017!3d-22.898767540390182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1779123045498!5m2!1spt-BR!2sbr"
                     style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </div>
-
         <div class="footer-bottom">
             &copy; 2026 NutriCampo — Todos os direitos reservados
         </div>
     </footer>
 
-    <!-- INICIALIZAÇÃO DO AOS -->
+    <!-- SCRIPT DE INICIALIZAÇÃO DO AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
