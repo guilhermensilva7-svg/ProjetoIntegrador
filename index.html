@@ -1,207 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NutriCampo - Início</title>
+  <title>Login - NutriCampo</title>
   <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="style/Login2.css">
 
   <!-- FRAMEWORK DE ANIMAÇÃO (AOS) -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- FRAMEWORK DE ÍCONES (Font Awesome) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- FONTS -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;700&family=DM+Sans:wght@400;500&display=swap"
-    rel="stylesheet">
-
-  <!-- BOOTSTRAP CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- BOOTSTRAP JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
 
 <body>
 
-  <!-- HEADER COM ÍCONES -->
+  <!-- HEADER -->
   <header>
     <nav>
       <a href="Noticias.html"><i class="fa-regular fa-newspaper me-1"></i> Notícias</a>
       <a href="Sobrenós.html"><i class="fa-solid fa-users me-1"></i> Nós</a>
-      <a href="Login.html"><i class="fa-solid fa-right-to-bracket me-1"></i> Login</a>
+      <a href="Index.html"><i class="fa-solid fa-house me-1"></i> Início</a>
       <a href="Clientes.html"><i class="fa-solid fa-address-book me-1"></i> Clientes</a>
-      <img class="logo" src="Imagens/2.png" alt="Logo NutriCampo">
     </nav>
+    <img class="logo" src="Imagens/2.png" alt="Logo NutriCampo">
   </header>
 
-  <!-- CITAÇÃO (Com Animação Fade-Up) -->
-  <div class="citacao" data-aos="fade-up" data-aos-duration="1000">
-    <p>O mundo atual passa por uma profunda transformação impulsionada pela urgência climática e pela revolução
-      tecnológica, realidades que dominam tanto o noticiário global quanto o dia a dia no campo. Na agropecuária,
-      a produção tradicional cedeu espaço para um ecossistema de alta precisão, onde o uso de Inteligência
-      Artificial, edição genética, bioinsumos, sensores vestíveis para o gado (IoT) e sistemas sustentáveis (como
-      a Integração Lavoura-Pecuária-Floresta) trabalham juntos para garantir máxima produtividade, carne carbono
-      neutro e rastreabilidade total via blockchain.</p>
+  <!-- CONTAINER PRINCIPAL DO FORMULÁRIO (Animação Zoom-In) -->
+  <div class="main-container" data-aos="zoom-in" data-aos-duration="800">
+    <h1 class="title">Entrar</h1>
+
+    <form method="post" action="#" class="registration-form">
+
+      <div class="input-group" data-aos="fade-up" data-aos-delay="200">
+        <label for="email">Usuário</label>
+        <input type="email" id="email" name="email" placeholder="Nome" required>
+      </div>
+
+
+      <div class="input-group" data-aos="fade-up" data-aos-delay="400">
+        <label for="senha">SENHA</label>
+        <input type="password" id="senha" name="senha" placeholder="Mínimo 6 caracteres" required>
+      </div>
+
+      <button type="submit" class="btn-submit" onclick="verificarUsuario()" data-aos="fade-up"
+        data-aos-delay="500">Logar</button>
+
+        <p class="ou">ou</p>
+        <button type="button" onclick="window.location.href='Login.html'" class="btn-submitou" data-aos="fade-up" data-aos-delay="600">Não possuo cadastro</button>
+      </a>
+    </form>
   </div>
 
-  <!-- TÍTULO DESTAQUES -->
-  <h2 class="catalogo-titulo" data-aos="fade-right">Destaques</h2>
-
-  <!-- CARROSSEL (Com Animação Zoom) -->
-  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" data-aos="zoom-in"
-    data-aos-duration="800">
-
-    <!-- INDICADORES -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
-    </div>
-
-    <!-- CONTEÚDO DOS SLIDES -->
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="2500">
-        <img src="Imagens/Sistema.jpg" class="d-block" alt="ILPF">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Sistemas ILPF</h5>
-        </div>
-      </div>
-
-      <div class="carousel-item" data-bs-interval="2500">
-        <img src="Imagens/IoT.jpg" class="d-block" alt="IoT">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>IoT no Campo</h5>
-        </div>
-      </div>
-
-      <div class="carousel-item" data-bs-interval="2500">
-        <img src="Imagens/blockchain.jpg" class="d-block" alt="Blockchain">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Blockchain e Rastreabilidade</h5>
-        </div>
-      </div>
-
-      <div class="carousel-item" data-bs-interval="2500">
-        <img src="Imagens/Fertilização In Vitro.jpg" class="d-block" alt="Fertilização In Vitro">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Fertilização In Vitro</h5>
-        </div>
-      </div>
-
-      <div class="carousel-item" data-bs-interval="2500">
-        <img src="Imagens/recordes históricos de preço.jpg" class="d-block" alt="Recordes de Exportação">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Recordes de Exportação</h5>
-        </div>
-      </div>
-
-      <div class="carousel-item" data-bs-interval="2500">
-        <img src="Imagens/exportações de carne bovina.jpg" class="d-block" alt="Carne Premium">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Carne Premium Brasileira</h5>
-        </div>
-      </div>
-    </div>
-
-    <!-- SETAS DE NAVEGAÇÃO -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Próximo</span>
-    </button>
-
-  </div>
-
-  <hr class="divisor">
-
-  <main>
-
-    <!-- SEÇÃO 1 (Animações Individuais em Cada Bloco) -->
-    <section class="secao">
-      <h1 class="secao-titulo" data-aos="fade-up">Pecuária 4.0: Inovação e Sustentabilidade Redefinem o Futuro do Agro
-        Brasileiro</h1>
-      <div class="grid-3">
-        <div data-aos="fade-up" data-aos-delay="100">
-          <div class="bloco-img"><img src="Imagens/Sistema.jpg" alt="ILPF"></div>
-          <p class="bloco-texto" style="margin-top:14px;">Sistemas ILPF (Integração Lavoura-Pecuária-Floresta)
-            e Pecuária de Baixo Carbono: O sistema ILPF alterna ou combina a criação de gado com o cultivo
-            de grãos e o plantio de árvores em uma mesma área. As árvores fornecem sombra e capturam gases
-            de efeito estufa. O resultado é a <mark>produção da chamada "carne carbono neutro"</mark>, uma
-            exigência crescente dos mercados internacionais.</p>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="200">
-          <div class="bloco-img"><img src="Imagens/IoT.jpg" alt="IoT"></div>
-          <p class="bloco-texto" style="margin-top:14px;">A tecnologia vestível chegou ao pasto. Hoje, bovinos
-            utilizam colares, brincos eletrônicos e sensores inteligentes <mark>conectados à Internet das
-              Coisas (IoT).</mark> Esses dispositivos coletam dados 24h sobre saúde, movimentação e
-            digestão de cada animal. Com IA, o produtor recebe alertas no celular para tratar doenças antes
-            que se agravem.</p>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="300">
-          <div class="bloco-img"><img src="Imagens/blockchain.jpg" alt="Blockchain"></div>
-          <p class="bloco-texto" style="margin-top:14px;">Usando blockchain e monitoramento via satélite, é
-            possível registrar todas as informações sobre a vida do animal, <mark>desde o seu nascimento até
-              a chegada ao supermercado.</mark> Isso garante aos compradores que os produtos são livres de
-            desmatamento e estão em conformidade com as leis ambientais e trabalhistas.</p>
-        </div>
-      </div>
-    </section>
-
-    <hr class="divisor">
-
-    <!-- SEÇÃO 2 (3 Colunas: Texto | Imagem | Texto) -->
-    <section class="secao">
-      <h1 class="secao-titulo" data-aos="fade-up">Do Laboratório ao Pasto: O Salto Tecnológico da Nova Pecuária</h1>
-      <div class="grid-2">
-        <p class="bloco-texto" data-aos="fade-right">O Brasil se consolidou como potência mundial na produção de
-          embriões bovinos. Um
-          simples fio de cabelo da cauda colhido ao nascer sequencia o DNA do bezerro, prevendo resistência a
-          doenças e qualidade de carne. Quando encontram animais de "elite", os produtores usam a
-          <mark>Fertilização In Vitro (FIV)</mark> — os óvulos são fecundados em laboratório e os embriões
-          gerados em vacas receptoras. Uma única vaca de excelência pode deixar dezenas de descendentes em um
-          só ano.
-        </p>
-        <div class="bloco-img" data-aos="zoom-in"><img src="Imagens/Fertilização In Vitro.jpg" alt="FIV"></div>
-        <p class="bloco-texto" data-aos="fade-left">A grande revolução é a velocidade da evolução. O que antes demorava
-          décadas,
-          <mark>agora é feito em 3 ou 4 anos.</mark> Um boi com genética superior cresce mais rápido, atinge o
-          peso ideal de abate mais cedo e passa menos tempo no pasto emitindo metano. Essa tecnologia permite
-          produzir muito mais carne e leite usando um número menor de animais e área menor de terra.
-        </p>
-      </div>
-    </section>
-
-    <!-- SEÇÃO 3 - EXPORTAÇÕES -->
-    <section class="secao secao-exportacao" data-aos="fade-up">
-      <h1 class="secao-titulo">Recorde nas Exportações (Março 2026)</h1>
-      <div class="grid-3" style="align-items:center;">
-        <div class="bloco-img" data-aos="fade-right"><img src="Imagens/recordes históricos de preço.jpg" alt="Recordes">
-        </div>
-        <p class="bloco-texto">O Brasil atingiu um faturamento recorde de <mark>US$ 68,24 milhões por dia</mark>
-          em exportações de carne bovina, resultado direto do investimento em genética de ponta e eficiência
-          produtiva. Graças à tecnologia do "boi precoce", o país entrega carne de alta qualidade em ciclos
-          mais curtos, elevando o valor de mercado para o patamar histórico de US$ 5.687 por tonelada. Isso
-          consolida o Brasil como fornecedor de proteína premium de alto valor agregado.</p>
-        <div class="bloco-img" data-aos="fade-left"><img src="Imagens/exportações de carne bovina.jpg"
-            alt="Exportações"></div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER COM ÍCONES SOCIAIS -->
+  <!-- FOOTER COM ÍCONES -->
   <footer>
     <div class="footer-inner">
       <div>
@@ -239,9 +92,25 @@
   <!-- SCRIPT DE INICIALIZAÇÃO DO AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    function verificarUsuario() {
+      var log = document.getElementById('email').value
+      var sen = document.getElementById('senha').value
+
+      if (log == 'admin' && sen == '12345') {
+        alert('Login realizado com sucesso')
+        window.location.href = 'home.html'
+      } else {
+        alert('Usuário não localizado')
+        window.location.href = 'index.html'
+      }
+
+    }
+
+
+
     AOS.init({
-      once: true, // A animação acontece apenas uma vez ao rolar
-      duration: 800 // Duração da animação em milissegundos
+      once: true,
+      duration: 800
     });
   </script>
 </body>
