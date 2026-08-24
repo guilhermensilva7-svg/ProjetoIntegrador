@@ -309,16 +309,4 @@ footer img {
         font-size: 1.5rem;
     }
 
-    .input-group input,
-    .btn-submit {
-        font-size: 0.9rem;
-    }
-
-    footer img {
-        max-width: 160px;
-    }
-
-    .footer-slogan {
-        font-size: 14px;
-    }
-}
+  
