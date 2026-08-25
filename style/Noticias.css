@@ -37,9 +37,9 @@ body {
 .bnews-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../Imagens/blockchain.jpg');
+  background-image: url('../Imagens/banner\ 3.png');
   background-size: cover;
-  background-position: center 40%;
+  background-position: center 3%;
   opacity: 0.3;
 }
 
@@ -177,15 +177,15 @@ header {
   width: 100%;
   padding: 0 28px;
   height: 64px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   position: relative;
 }
 
 .logo {
-  width: 165px;
-  position: absolute;
-  top: 8px;
-  left: 60px;
+  width: 100px;
+    position: absolute;
+    top: -5px;
+    left: 0px;
 }
 
 header nav {

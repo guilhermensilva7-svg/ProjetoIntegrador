@@ -25,10 +25,10 @@ header{
   
 }
 .logo{
-    width: 165px;
+    width: 100px;
     position: absolute;
-    top: 8px;
-    left: 60px;
+    top: -5px;
+    left: 0px;
      
 }
 header a{
